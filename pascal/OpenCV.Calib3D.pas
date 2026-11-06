@@ -2,7 +2,7 @@
 {                                                                            }
 { OpenCV.Calib3D                                                             }
 {                                                                            }
-{ Copyright © 2025, 2026 Yuriy Pisarev               }
+{ Copyright © 2026 Yuriy Pisarev                                             }
 {                                                                            }
 { ************************************************************************** }
 
@@ -197,7 +197,7 @@ type
       ConvertPointsToHomogeneous: TConvertPointsToHomogeneous;
       UndistortPoints: TUndistortPoints;
       EstimateAffine3D: TEstimateAffine3D;
-      EstimateAffine2D: TEstimateAffine2D; { Inliers only. }
+      EstimateAffine2D: TEstimateAffine2D;
       GetOptimalNewCameraMatrix: TGetOptimalNewCameraMatrix;
       CalibrateCameraExtended: TCalibrateCameraExtended;
       CalibrateHandEye: TCalibrateHandEye;
@@ -264,8 +264,6 @@ type
       StereoSGBMSetNumDisparities: TStereoSGBMSetNumDisparities;
       StereoSGBMGetUniquenessRatio: TStereoSGBMGetUniquenessRatio;
       StereoSGBMSetUniquenessRatio: TStereoSGBMSetUniquenessRatio;
-      { On success, release both the inlier mask and transform with Core.DeleteMat. }
-      { Available when the OpenCV bridge exports the extended function. }
       EstimateAffine2DWithTransform: TEstimateAffine2DWithTransform;
     procedure Initialize(const Handle: TLibHandle);
   end;

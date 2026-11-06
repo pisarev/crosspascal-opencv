@@ -2,7 +2,7 @@
 {                                                                            }
 { OpenCV.XImgProc                                                            }
 {                                                                            }
-{ Copyright © 2025, 2026 Yuriy Pisarev               }
+{ Copyright © 2026 Yuriy Pisarev                                             }
 {                                                                            }
 { ************************************************************************** }
 
@@ -77,8 +77,6 @@ type
       TCreateEdgeBoxes = function(Alpha, Beta, Eta, MinScore: Single; MaxBoxes: Integer;
         EdgeMinMag, EdgeMergeThr, ClusterMinMag, MaxAspectRatio, MinBoxArea, Gamma, Kappa: Single): Pointer; cdecl;
       TDeleteEdgeBoxes = procedure(EdgeBoxes: Pointer); cdecl;
-      // Pass nil for Boxes to query the count. Otherwise initialize Count^ with the buffer capacity.
-      // If capacity is too small, Count^ receives the required count and Boxes stays unchanged.
       TEdgeBoxesGetBoundingBoxes = procedure(EdgeBoxes: Pointer; EdgeMap: TMat; OrientationMap: TMat;
         Boxes: POCVRect; Count: PInteger); cdecl;
       TEdgeBoxesGetAlpha = function(EdgeBoxes: Pointer): Single; cdecl;
@@ -98,7 +96,6 @@ type
         Sigma: Single); cdecl;
       TSelectiveSearchSwitchToSelectiveSearchQuality = procedure(SS: Pointer; BaseK, IncK: Integer;
         Sigma: Single); cdecl;
-      // Uses the same count and capacity contract as TEdgeBoxesGetBoundingBoxes.
       TSelectiveSearchProcess = procedure(SS: Pointer; Rects: POCVRect; Count: PInteger); cdecl;
       TSelectiveSearchAddImage = procedure(SS: Pointer; Image: TMat); cdecl;
       TCreateSuperpixelSEEDS = function(ImageWidth, ImageHeight, ImageChannels, NumSuperpixels, NumLevels, Prior, HistogramBins: Integer;

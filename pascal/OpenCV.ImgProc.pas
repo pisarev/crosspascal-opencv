@@ -2,7 +2,7 @@
 {                                                                            }
 { OpenCV.ImgProc                                                             }
 {                                                                            }
-{ Copyright © 2025, 2026 Yuriy Pisarev               }
+{ Copyright © 2026 Yuriy Pisarev                                             }
 {                                                                            }
 { ************************************************************************** }
 
@@ -186,7 +186,6 @@ type
       TApproxPolyDP = function(Curve: TMat; ApproxCurve: PMat; Epsilon: Double;
         Closed: LongBool): LongBool; cdecl;
       THuMoments = function(Moments: POCVMoments; Hu: PDouble): LongBool; cdecl;
-      // Allocate MaxLevel + 1 target slots. Count^ reports the number written.
       TBuildPyramid = function(Source: TMat; Target: PMat; Count: PInteger;
         MaxLevel, BorderType: Integer): LongBool; cdecl;
       TInvertAffineTransform = function(M: TMat; IM: PMat): LongBool; cdecl;
@@ -228,8 +227,6 @@ type
       TCreateGeneralizedHoughGuil = function: Pointer; cdecl;
       TDeleteGeneralizedHough = function(Handle: Pointer): LongBool; cdecl;
       TBlendLinear = function(Source1, Source2, Weights1, Weights2: TMat; Target: PMat): LongBool; cdecl;
-      // Pass nil for Contours to query the count. Otherwise set ContourCount^ to the buffer capacity.
-      // A short buffer stays unchanged. The call returns False and the required count.
       TFindContoursLinkRuns = function(Image: TMat; Contours: PMat; ContourCount: PInteger): LongBool; cdecl;
       TFitEllipseAMS = function(Points: TMat; Result: POCVRotatedRect): LongBool; cdecl;
       TFitEllipseDirect = function(Points: TMat; Result: POCVRotatedRect): LongBool; cdecl;

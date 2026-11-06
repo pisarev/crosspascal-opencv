@@ -2,7 +2,7 @@
 {                                                                            }
 { OpenCV.XFeatures2D                                                         }
 {                                                                            }
-{ Copyright © 2025, 2026 Yuriy Pisarev               }
+{ Copyright © 2026 Yuriy Pisarev                                             }
 {                                                                            }
 { ************************************************************************** }
 
