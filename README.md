@@ -1,11 +1,21 @@
 # CrossPascal OpenCV
 
-`crosspascal-opencv` is the repository for the planned OpenCV package: Pascal bindings, a C++ bridge, and native dependencies.
+Use OpenCV from Object Pascal to load and transform images, manage native image buffers, and add video I/O to a Windows application. The component includes bindings for OpenCV 4.10.0, the CrossCV bridge source, and an interface that manages the lifetime of native Mat objects.
 
-The current preview contains documentation and a source inventory checker. Native package acceptance is still pending. This preview contains no binding source or bridge binaries. It does not establish ABI compatibility or provide a supported OpenCV installation.
+## Try it on Windows x64
 
-The package will have its own build, license, and runtime checks. It can be released independently of Leptonica and the model converter.
+1. Build the Windows x64 `crosscv.dll` from the matching native source asset using its README. Place the resulting DLL in this repository's `bin` directory.
+2. In Delphi 13.2, open `examples\CrossCVHello.dproj` and select Windows 64-bit. In Lazarus 4.8 with FPC 3.2.2, open `examples\CrossCVHello.lpi` and build for Windows x64.
+3. Build and run the project. It prints the loaded DLL path, the bridge ABI, a pixel sum of **84**, and **12** nonzero pixels.
+4. Open the corresponding `LoadResizeSave` project, choose a photograph, and save a 640 × 480 PNG.
 
-From this repository's root, verify the documentation snapshot with Python 3.12 or later: `python -B scripts/verify_source.py`. The inventory allows declared root Git metadata and checks all distributed files.
+Both examples use the relative unit paths in their project files. The Lazarus build has its own output directory. A standalone install needs this repository and its matching native source asset. Python model conversion and TVM are separate.
 
-The original documentation and utility use the [MIT license](LICENSE). This draft redistributes no OpenCV implementation.
+Use the Delphi or Lazarus runtime package in [packages](packages/) for reusable bindings. Read [the build notes](BUILD.md), [known issues](KNOWN-ISSUES.md), and [third-party notices](THIRD-PARTY-NOTICES.md) for the matching bridge, build settings, upstream notices, and component limits.
+
+## Work with image regions
+
+- `Crop` and `ExtractRegion` return an independent copy of the requested rectangle.
+- `RegionView` shares pixels with the original matrix. Writing to the view updates the original.
+- `CopyRegionInto` writes into an existing nonempty target of the same type and the exact region size. To place the copy at an offset, pass a `RegionView` of the destination as the target. The function returns `False` if the region or target is invalid.
+- `Reduce` collapses rows with dimension 0 and columns with dimension 1. Reduction codes are 0 for sum, 1 for average, 2 for maximum, and 3 for minimum.

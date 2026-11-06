@@ -1,0 +1,45 @@
+﻿{ ************************************************************************** }
+{                                                                            }
+{ crosspascal_crossopencv                                                    }
+{                                                                            }
+{ Copyright © 2026 Yuriy Pisarev (ypisareff@outlook.com)                     }
+{                                                                            }
+{ ************************************************************************** }
+
+package crosspascal_crossopencv;
+
+{$RUNONLY}
+{$DESCRIPTION 'Object Pascal bindings for opencv'}
+
+requires
+  rtl;
+
+contains
+  CrossVision.Mat in '..\..\pascal\CrossVision.Mat.pas',
+  OpenCV.Aruco in '..\..\pascal\OpenCV.Aruco.pas',
+  OpenCV.Bioinspired in '..\..\pascal\OpenCV.Bioinspired.pas',
+  OpenCV.Calib3D in '..\..\pascal\OpenCV.Calib3D.pas',
+  OpenCV.Core in '..\..\pascal\OpenCV.Core.pas',
+  OpenCV.Custom in '..\..\pascal\OpenCV.Custom.pas',
+  OpenCV.Dnn in '..\..\pascal\OpenCV.Dnn.pas',
+  OpenCV.Face in '..\..\pascal\OpenCV.Face.pas',
+  OpenCV.Features2D in '..\..\pascal\OpenCV.Features2D.pas',
+  OpenCV.HighGui in '..\..\pascal\OpenCV.HighGui.pas',
+  OpenCV.ImgCodecs in '..\..\pascal\OpenCV.ImgCodecs.pas',
+  OpenCV.ImgProc in '..\..\pascal\OpenCV.ImgProc.pas',
+  OpenCV.Ml in '..\..\pascal\OpenCV.Ml.pas',
+  OpenCV.ObjDetect in '..\..\pascal\OpenCV.ObjDetect.pas',
+  OpenCV.Optflow in '..\..\pascal\OpenCV.Optflow.pas',
+  OpenCV in '..\..\pascal\OpenCV.pas',
+  OpenCV.Photo in '..\..\pascal\OpenCV.Photo.pas',
+  OpenCV.Stitching in '..\..\pascal\OpenCV.Stitching.pas',
+  OpenCV.Tracking in '..\..\pascal\OpenCV.Tracking.pas',
+  OpenCV.Video in '..\..\pascal\OpenCV.Video.pas',
+  OpenCV.VideoIO in '..\..\pascal\OpenCV.VideoIO.pas',
+  OpenCV.XFeatures2D in '..\..\pascal\OpenCV.XFeatures2D.pas',
+  OpenCV.XImgProc in '..\..\pascal\OpenCV.XImgProc.pas',
+  OpenCV.XPhoto in '..\..\pascal\OpenCV.XPhoto.pas',
+  OpenCVConsts in '..\..\pascal\OpenCVConsts.pas',
+  OpenCVTypes in '..\..\pascal\OpenCVTypes.pas';
+
+end.

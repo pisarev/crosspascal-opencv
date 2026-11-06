@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="/" />
+    <Name Value="crosspascal_crosscv" />
+    <Type Value="RunTime" />
+    <Author Value="Yuriy Pisarev" />
+    <Description Value="Object Pascal bindings and image ownership helpers for OpenCV." />
+    <License Value="See the repository license and source notices." />
+    <Version Major="1" Minor="0" Release="0" />
+    <CompilerOptions>
+      <Version Value="11" />
+      <SearchPaths>
+        <OtherUnitFiles Value="../../pascal" />
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)" />
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <SyntaxMode Value="Delphi" />
+        </SyntaxOptions>
+      </Parsing>
+    </CompilerOptions>
+    <Files Count="26">
+      <Item1>
+        <Filename Value="../../pascal/CrossVision.Mat.pas" />
+        <UnitName Value="CrossVision.Mat" />
+      </Item1>
+      <Item2>
+        <Filename Value="../../pascal/OpenCV.Aruco.pas" />
+        <UnitName Value="OpenCV.Aruco" />
+      </Item2>
+      <Item3>
+        <Filename Value="../../pascal/OpenCV.Bioinspired.pas" />
+        <UnitName Value="OpenCV.Bioinspired" />
+      </Item3>
+      <Item4>
+        <Filename Value="../../pascal/OpenCV.Calib3D.pas" />
+        <UnitName Value="OpenCV.Calib3D" />
+      </Item4>
+      <Item5>
+        <Filename Value="../../pascal/OpenCV.Core.pas" />
+        <UnitName Value="OpenCV.Core" />
+      </Item5>
+      <Item6>
+        <Filename Value="../../pascal/OpenCV.Custom.pas" />
+        <UnitName Value="OpenCV.Custom" />
+      </Item6>
+      <Item7>
+        <Filename Value="../../pascal/OpenCV.Dnn.pas" />
+        <UnitName Value="OpenCV.Dnn" />
+      </Item7>
+      <Item8>
+        <Filename Value="../../pascal/OpenCV.Face.pas" />
+        <UnitName Value="OpenCV.Face" />
+      </Item8>
+      <Item9>
+        <Filename Value="../../pascal/OpenCV.Features2D.pas" />
+        <UnitName Value="OpenCV.Features2D" />
+      </Item9>
+      <Item10>
+        <Filename Value="../../pascal/OpenCV.HighGui.pas" />
+        <UnitName Value="OpenCV.HighGui" />
+      </Item10>
+      <Item11>
+        <Filename Value="../../pascal/OpenCV.ImgCodecs.pas" />
+        <UnitName Value="OpenCV.ImgCodecs" />
+      </Item11>
+      <Item12>
+        <Filename Value="../../pascal/OpenCV.ImgProc.pas" />
+        <UnitName Value="OpenCV.ImgProc" />
+      </Item12>
+      <Item13>
+        <Filename Value="../../pascal/OpenCV.Ml.pas" />
+        <UnitName Value="OpenCV.Ml" />
+      </Item13>
+      <Item14>
+        <Filename Value="../../pascal/OpenCV.ObjDetect.pas" />
+        <UnitName Value="OpenCV.ObjDetect" />
+      </Item14>
+      <Item15>
+        <Filename Value="../../pascal/OpenCV.Optflow.pas" />
+        <UnitName Value="OpenCV.Optflow" />
+      </Item15>
+      <Item16>
+        <Filename Value="../../pascal/OpenCV.pas" />
+        <UnitName Value="OpenCV" />
+      </Item16>
+      <Item17>
+        <Filename Value="../../pascal/OpenCV.Photo.pas" />
+        <UnitName Value="OpenCV.Photo" />
+      </Item17>
+      <Item18>
+        <Filename Value="../../pascal/OpenCV.Stitching.pas" />
+        <UnitName Value="OpenCV.Stitching" />
+      </Item18>
+      <Item19>
+        <Filename Value="../../pascal/OpenCV.Tracking.pas" />
+        <UnitName Value="OpenCV.Tracking" />
+      </Item19>
+      <Item20>
+        <Filename Value="../../pascal/OpenCV.Video.pas" />
+        <UnitName Value="OpenCV.Video" />
+      </Item20>
+      <Item21>
+        <Filename Value="../../pascal/OpenCV.VideoIO.pas" />
+        <UnitName Value="OpenCV.VideoIO" />
+      </Item21>
+      <Item22>
+        <Filename Value="../../pascal/OpenCV.XFeatures2D.pas" />
+        <UnitName Value="OpenCV.XFeatures2D" />
+      </Item22>
+      <Item23>
+        <Filename Value="../../pascal/OpenCV.XImgProc.pas" />
+        <UnitName Value="OpenCV.XImgProc" />
+      </Item23>
+      <Item24>
+        <Filename Value="../../pascal/OpenCV.XPhoto.pas" />
+        <UnitName Value="OpenCV.XPhoto" />
+      </Item24>
+      <Item25>
+        <Filename Value="../../pascal/OpenCVConsts.pas" />
+        <UnitName Value="OpenCVConsts" />
+      </Item25>
+      <Item26>
+        <Filename Value="../../pascal/OpenCVTypes.pas" />
+        <UnitName Value="OpenCVTypes" />
+      </Item26>
+    </Files>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="FCL" />
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)" />
+    </UsageOptions>
+  </Package>
+</CONFIG>

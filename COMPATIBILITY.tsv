@@ -1,0 +1,5 @@
+component	platform	verified_scope	limits
+Delphi 13.2	Windows x64	CrossCVHello and LoadResizeSave built and run	Early-access examples
+Lazarus 4.8 (FPC 3.2.2)	Windows x64	CrossCVHello and LoadResizeSave built and run	Early-access examples
+CrossCV native	Windows x64	Local source build; ABI 3; FFmpeg video write and read	The SDK supplies source and build instructions
+Native build environment	Ubuntu 22.04/Linux amd64 MinGW POSIX	Pinned dependencies and Windows x64 cross-build	Windows x64 is the verified runtime

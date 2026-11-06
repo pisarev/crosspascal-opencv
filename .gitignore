@@ -1,0 +1,7 @@
+build/
+*.dcu
+*.exe
+*.bpl
+*.dcp
+*.dll
+*.so

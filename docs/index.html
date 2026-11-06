@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pascal OpenCV | Windows early access</title><style>
+:root{--paper:#F0F1EC;--plate:#E9EBE4;--ink:#171A18;--ink-soft:#5B6259;--rule:#D3D7CD;--grid:#DCE0D5;--glow:0;--pen-blue:#2F5C9E;--pen-red:#B03A32;--pen-green:#2C6B52;--pen-violet:#6B4A8F;--pen-amber:#B67A2C;--accent:var(--pen-blue);--serif:"Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,"Times New Roman",serif;--mono:"Cascadia Mono",Consolas,"SF Mono","DejaVu Sans Mono",ui-monospace,monospace}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0B0E0C;--plate:#0F1311;--ink:#DEE4DC;--ink-soft:#8B9489;--rule:#1F2622;--grid:#171E19;--glow:1;--pen-blue:#74A4EA;--pen-red:#E87C70;--pen-green:#63D5A3;--pen-violet:#B490E2;--pen-amber:#E2A855}}
+:root[data-theme="light"]{--paper:#F0F1EC;--plate:#E9EBE4;--ink:#171A18;--ink-soft:#5B6259;--rule:#D3D7CD;--grid:#DCE0D5;--glow:0;--pen-blue:#2F5C9E;--pen-red:#B03A32;--pen-green:#2C6B52;--pen-violet:#6B4A8F;--pen-amber:#B67A2C}
+:root[data-theme="dark"]{--paper:#0B0E0C;--plate:#0F1311;--ink:#DEE4DC;--ink-soft:#8B9489;--rule:#1F2622;--grid:#171E19;--glow:1;--pen-blue:#74A4EA;--pen-red:#E87C70;--pen-green:#63D5A3;--pen-violet:#B490E2;--pen-amber:#E2A855}
+*{box-sizing:border-box}html{background:var(--paper);color:var(--ink)}body{margin:0;font:400 1.0625rem/1.72 var(--serif);font-variant-numeric:oldstyle-nums;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}.sheet{max-width:74rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,3.5rem)}.bar{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;padding:1.25rem 0;border-bottom:1px solid var(--rule)}.label,button,.row,code,pre{font-family:var(--mono);font-size:.82rem}.label{color:var(--ink-soft);letter-spacing:.08em}.themes{display:flex;gap:.35rem}button{cursor:pointer;color:var(--ink);background:var(--plate);border:1px solid var(--rule);border-radius:2px;padding:.35rem .6rem}button[aria-pressed="true"]{color:var(--pen-blue);border-color:var(--pen-blue)}button:focus-visible,a:focus-visible{outline:2px solid var(--pen-blue);outline-offset:3px}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(2rem,5vw,4.5rem)}.pair>*{min-width:0}.hero{padding:clamp(3rem,6vw,5rem) 0;align-items:center}section{border-top:1px solid var(--rule);padding:2rem 0}h1,h2,h3{font-weight:400;text-wrap:balance}h1{font-size:clamp(2.6rem,1.2rem + 4.6vw,4.75rem);line-height:1.02;letter-spacing:-.021em;margin:.6rem 0 1.4rem;overflow-wrap:anywhere}h2{font-size:2rem;line-height:1.15;margin:0 0 1rem;max-width:15ch}h3{font-size:1.35rem;margin:0 0 .6rem}p{hyphens:auto;-webkit-hyphens:auto;text-align:justify}li{text-align:start}p{margin:0 0 1rem}.lead{font-size:1.22rem}.plate{position:relative;background:var(--plate);padding:1.5rem}.plate:before,.plate:after{content:"";position:absolute;width:.75rem;height:.75rem;border:1px solid var(--rule)}.plate:before{top:-1px;left:-1px;border-right:0;border-bottom:0}.plate:after{bottom:-1px;right:-1px;border-left:0;border-top:0}.row{display:flex;align-items:baseline;gap:.5rem;padding:.65rem 0;border-top:1px solid var(--rule);overflow-wrap:anywhere}.dots{flex:1 1 auto;border-bottom:1px dotted var(--rule);transform:translateY(-.28em)}.good{color:var(--pen-green)}.pending{color:var(--pen-amber)}a{color:var(--pen-blue);text-decoration:none;border-bottom:1px solid var(--rule)}pre{overflow:auto;max-width:100%;padding:1rem;background:var(--plate);line-height:1.6}code{overflow-wrap:anywhere}footer{border-top:1px solid var(--rule);padding:1.5rem 0 3rem;color:var(--ink-soft)}@media(max-width:900px){.pair{grid-template-columns:minmax(0,1fr);row-gap:1.5rem}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style></head>
+<body><main class="sheet">
+<div class="bar"><span class="label">CROSSPASCAL / INDEPENDENT LIBRARIES</span><div class="themes" role="group" aria-label="Color theme"><button data-choice="system" aria-pressed="true">System</button><button data-choice="light" aria-pressed="false">Light</button><button data-choice="dark" aria-pressed="false">Dark</button></div></div>
+<header class="pair hero">
+<div><span class="label">WINDOWS EARLY ACCESS</span><h1>Pascal OpenCV</h1>
+<p class="lead">Use OpenCV 4.10.0 from Object Pascal to resize and transform images, manage native image buffers, and read and write video.</p></div>
+<div class="plate"><h2>At a glance</h2>
+<div class="row"><span>Pascal binding units</span><span class="dots"></span><span>25</span></div>
+<div class="row"><span>Windows</span><span class="dots"></span><span>x64</span></div>
+<div class="row"><span>Compilers</span><span class="dots"></span><span>Delphi 13.2 and Lazarus 4.8</span></div>
+</div>
+</header>
+<section class="pair">
+<div><h2>Try the examples</h2></div>
+<div><ol>
+<li>Build <code>bin/crosscv.dll</code> using the <a href="../BUILD.md">native source guide</a>.</li>
+<li>Open <code>examples/CrossCVHello.dproj</code> or <code>examples/CrossCVHello.lpi</code>. Build for Windows x64 and run.</li>
+<li>Open the corresponding LoadResizeSave project to choose an image and save a 640 × 480 PNG.</li>
+</ol><p>See the <a href="../INSTALL.md">installation guide</a> for details.</p></div>
+</section>
+<section class="pair">
+<div><h2>Verified on Windows x64</h2></div>
+<div><p>The two Pascal examples ran in Delphi and Lazarus. CrossCVHello reported a pixel sum of 84 and 12 nonzero pixels. LoadResizeSave saved identical PNGs across both compilers.</p><p>Read the <a href="../KNOWN-ISSUES.md">known limitations</a>.</p></div>
+</section>
+<footer><p>The project code uses MIT. Native libraries keep their original terms, including LGPL FFmpeg. The OpenCV source asset contains the build and relinking instructions. Read the <a href="../THIRD-PARTY-NOTICES.md">third-party notices</a>.</p></footer>
+</main><script>const buttons=[...document.querySelectorAll('[data-choice]')];for(const b of buttons)b.addEventListener('click',()=>{const t=b.dataset.choice;if(t==='system')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=t;for(const x of buttons)x.setAttribute('aria-pressed',String(x===b));});</script></body></html>
