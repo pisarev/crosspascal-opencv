@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-013",
+  "release_id": "early-access-015",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -39,6 +39,41 @@
       "path": "COMPATIBILITY.tsv",
       "bytes": 512,
       "sha256": "5b71240ee78b4e2d337be9239b37f5104b261c768b4eca53926602ccb8a274a7"
+    },
+    {
+      "path": "INSTALL.md",
+      "bytes": 1059,
+      "sha256": "ce0a0ee893a1ab5bbbb82662f178dd17a6b5199f01b4c012aeb8b8eea23a650c"
+    },
+    {
+      "path": "KNOWN-ISSUES.md",
+      "bytes": 1583,
+      "sha256": "e1a4def7662b71556c50bf7cd9ee9f2773ef9da8d00154c89693d4697c699cd0"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1070,
+      "sha256": "04b643fe3d2d95be3b9a0ad9d3882d00a9b2d9dfb74694f35fe8edfc77e67815"
+    },
+    {
+      "path": "LICENSES.tsv",
+      "bytes": 5883,
+      "sha256": "add81419302b375a0fb29ef27558b2d90875bfe80c7f94ca7c22d831b82f681e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2030,
+      "sha256": "6e07a661e87f9ffe95548217b2a692aa8ab490daaeda9c2b12f7c7fcd0a56b0e"
+    },
+    {
+      "path": "TESTING.md",
+      "bytes": 643,
+      "sha256": "32d75e3052ca3b58a012d8819ac5f2f6485af1f071c66557fbde5741d3df174b"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 3290,
+      "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     },
     {
       "path": "cpp/crosscv.def",
@@ -326,21 +361,6 @@
       "sha256": "a0c36c63cbc12187ca6e70c8f5d52388886afb7dbcc49bbb29889905ec9dea9e"
     },
     {
-      "path": "INSTALL.md",
-      "bytes": 1059,
-      "sha256": "ce0a0ee893a1ab5bbbb82662f178dd17a6b5199f01b4c012aeb8b8eea23a650c"
-    },
-    {
-      "path": "KNOWN-ISSUES.md",
-      "bytes": 1583,
-      "sha256": "e1a4def7662b71556c50bf7cd9ee9f2773ef9da8d00154c89693d4697c699cd0"
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 1070,
-      "sha256": "04b643fe3d2d95be3b9a0ad9d3882d00a9b2d9dfb74694f35fe8edfc77e67815"
-    },
-    {
       "path": "licenses/dav1d/COPYING",
       "bytes": 1317,
       "sha256": "b327887de263238deaa80c34cdd2ff3e0ba1d35db585ce14a37ce3e74ee389e9"
@@ -406,14 +426,14 @@
       "sha256": "d91b925f4e9000a4ae1f7218fa6b3b29a411126ae93959736a72cee43027ad2c"
     },
     {
-      "path": "licenses/opencv/3rdparty/libjasper/copyright",
-      "bytes": 3042,
-      "sha256": "86c11bd7b94d24d6c372bd95f8d8998b8a69c7d82a91dd0247878b28223feabe"
-    },
-    {
       "path": "licenses/opencv/3rdparty/libjasper/LICENSE",
       "bytes": 2744,
       "sha256": "edf9f4257cc33a1f396f9b062ca4a01dca7c79747c7d85b8947e603e5166760e"
+    },
+    {
+      "path": "licenses/opencv/3rdparty/libjasper/copyright",
+      "bytes": 3042,
+      "sha256": "86c11bd7b94d24d6c372bd95f8d8998b8a69c7d82a91dd0247878b28223feabe"
     },
     {
       "path": "licenses/opencv/3rdparty/libjpeg-turbo/LICENSE.md",
@@ -461,19 +481,24 @@
       "sha256": "f64a0d2030dd3bb501f303eb66097ed92cd0c63f824e515b1116dafbce5346fe"
     },
     {
-      "path": "licenses/opencv/3rdparty/zlib/LICENSE",
-      "bytes": 1002,
-      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
-    },
-    {
       "path": "licenses/opencv/3rdparty/zlib-ng/LICENSE.md",
       "bytes": 867,
       "sha256": "d3c80be055d94d798eaa786116e84fa0b010bc11420b5d2060d978ea77845436"
     },
     {
+      "path": "licenses/opencv/3rdparty/zlib/LICENSE",
+      "bytes": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
       "path": "licenses/opencv/COPYRIGHT",
       "bytes": 733,
       "sha256": "bba849c98da85a2b27b86113284a90812c959b1c1fc4ed67de9355475d1e6831"
+    },
+    {
+      "path": "licenses/opencv/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
     },
     {
       "path": "licenses/opencv/doc/LICENSE_BSD.txt",
@@ -484,11 +509,6 @@
       "path": "licenses/opencv/doc/LICENSE_CHANGE_NOTICE.txt",
       "bytes": 2768,
       "sha256": "b2255f81ae7162e36550daefe432c72a8506cfc1b954897dbc553ed5160ad4b8"
-    },
-    {
-      "path": "licenses/opencv/LICENSE",
-      "bytes": 11358,
-      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
     },
     {
       "path": "licenses/opencv/modules/core/3rdparty/SoftFloat/COPYING.txt",
@@ -549,11 +569,6 @@
       "path": "licenses/opencv_contrib/modules/wechat_qrcode/LICENSE",
       "bytes": 20273,
       "sha256": "f8549a71cfb8bfa34e6b7d6491fbfac8034673294e2fd80493389e460a496cb5"
-    },
-    {
-      "path": "LICENSES.tsv",
-      "bytes": 5883,
-      "sha256": "add81419302b375a0fb29ef27558b2d90875bfe80c7f94ca7c22d831b82f681e"
     },
     {
       "path": "mingw-toolchain.cmake",
@@ -646,11 +661,6 @@
       "sha256": "1ea82673d64d45ac04760bf13276f6fb6865934919281f38af6c5809c1b3f693"
     },
     {
-      "path": "pascal/OpenCV.pas",
-      "bytes": 15033,
-      "sha256": "6e664ec0554ed7ca6a6c97e72ce07af871ea5ff7bbd9f4bf8116b4cdc012123d"
-    },
-    {
       "path": "pascal/OpenCV.Photo.pas",
       "bytes": 20657,
       "sha256": "99e8ac740d2a2bbe4ae61a9b09298af94eb0f0c0a6833e32de1d5d909e299e29"
@@ -691,6 +701,11 @@
       "sha256": "b96a0f923b556b9df6f6b663fed119f5e73ad00f517f5b3d4e239b10c2ed2198"
     },
     {
+      "path": "pascal/OpenCV.pas",
+      "bytes": 15033,
+      "sha256": "6e664ec0554ed7ca6a6c97e72ce07af871ea5ff7bbd9f4bf8116b4cdc012123d"
+    },
+    {
       "path": "pascal/OpenCVConsts.pas",
       "bytes": 29582,
       "sha256": "40c46ebd8e6492c4fbf54fa4a827018c9d1fa26d6423fb40bf0df6aee0d38fb1"
@@ -701,24 +716,9 @@
       "sha256": "b8fbb088a6363f266e07300c0601389db9fe8f3b2a792badb7610b945bf8b1c7"
     },
     {
-      "path": "README.md",
-      "bytes": 2030,
-      "sha256": "6e07a661e87f9ffe95548217b2a692aa8ab490daaeda9c2b12f7c7fcd0a56b0e"
-    },
-    {
       "path": "scripts/verify_source.py",
       "bytes": 13549,
       "sha256": "e36b010d92dd4a3b209c0e9fffb8492f492278c9bb65827a7b0dcee8a3fbd4a0"
-    },
-    {
-      "path": "TESTING.md",
-      "bytes": 643,
-      "sha256": "32d75e3052ca3b58a012d8819ac5f2f6485af1f071c66557fbde5741d3df174b"
-    },
-    {
-      "path": "THIRD-PARTY-NOTICES.md",
-      "bytes": 3290,
-      "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     }
   ]
 }
