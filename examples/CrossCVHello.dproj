@@ -1,10 +1,10 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{6887886F-9BC3-4C84-BB8C-478530479148}</ProjectGuid>
         <ProjectVersion>20.4</ProjectVersion>
         <MainSource>CrossCVHello.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <AppType>Console</AppType>
         <FrameworkType>None</FrameworkType>
@@ -35,7 +35,7 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <DCC_UnitSearchPath>..\pascal;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>../../crosspascal/prepare;..\pascal;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_ExeOutput>..\bin</DCC_ExeOutput>
         <DCC_DcuOutput>..\build\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_UsePackage>;$(DCC_UsePackage)</DCC_UsePackage>

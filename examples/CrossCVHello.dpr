@@ -8,7 +8,7 @@ program CrossCVHello;
 
 uses
   {$IFDEF FPC}SysUtils, Windows,{$ELSE}System.SysUtils, Winapi.Windows,{$ENDIF}
-  OpenCV, OpenCVTypes, OpenCVConsts;
+  OpenCV, OpenCVTypes, OpenCVConsts, ExampleDefaults;
 
 procedure RunExample;
 var
@@ -22,6 +22,7 @@ begin
   LibraryPath := ExtractFilePath(ParamStr(0)) + 'crosscv.dll';
   if not FileExists(LibraryPath) then
     LibraryPath := ExpandFileName(ExtractFilePath(ParamStr(0)) + '..\..\..\bin\crosscv.dll');
+  LibraryPath := PreparedPath('opencv', LibraryPath);
   if not CVInitialize(LibraryPath) then
     raise Exception.Create('Cannot load crosscv.dll: ' + CV.Module.Error);
   try

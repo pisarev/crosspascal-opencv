@@ -4,7 +4,7 @@
     <ProjectVersion>20.4</ProjectVersion>
     <MainSource>LoadResizeSave.dpr</MainSource>
     <Base>True</Base>
-    <Config Condition="'$(Config)'==''">Debug</Config>
+    <Config Condition="'$(Config)'==''">Release</Config>
     <Platform Condition="'$(Platform)'==''">Win64</Platform>
     <AppType>Console</AppType>
     <FrameworkType>VCL</FrameworkType>
@@ -21,7 +21,7 @@
     <Cfg_2>true</Cfg_2><CfgParent>Base</CfgParent><Base>true</Base>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Base)'!=''">
-    <DCC_UnitSearchPath>..\pascal;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+    <DCC_UnitSearchPath>../../crosspascal/prepare;..\pascal;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     <DCC_ExeOutput>..\bin</DCC_ExeOutput>
     <DCC_DcuOutput>..\build\$(Platform)\$(Config)</DCC_DcuOutput>
     <DCC_Namespace>System;Winapi;Vcl;$(DCC_Namespace)</DCC_Namespace>

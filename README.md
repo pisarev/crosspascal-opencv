@@ -1,5 +1,12 @@
 # CrossPascal OpenCV
 
+## Prepare and Run
+
+Download [Prepare-CrossCVHello-ea016.zip](https://github.com/pisarev/crosspascal/releases/download/early-access-016/Prepare-CrossCVHello-ea016.zip), extract it, and double-click **Prepare.cmd**. It downloads the matched dependencies and sample data, then opens the prepared project folder. Open the **.dproj** in Delphi 13.2 or the **.lpi** in Lazarus 4.8, and press **Run**. See the [complete preparation guide](https://github.com/pisarev/crosspascal/blob/early-access-016/docs/PREPARE-EXAMPLES.md) for first-time private GitHub access, model sizes and the other examples.
+
+Use [Prepare-LoadResizeSave-ea016.zip](https://github.com/pisarev/crosspascal/releases/download/early-access-016/Prepare-LoadResizeSave-ea016.zip) for the image-resizing example. The native companion retains its complete matching source and licences.
+
+
 Use OpenCV from Object Pascal to load and transform images, manage native image buffers, and add video I/O to a Windows application. The component includes bindings for OpenCV 4.10.0, the CrossCV bridge source, and an interface that manages the lifetime of native Mat objects.
 
 ## Try it on Windows x64

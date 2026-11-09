@@ -27,7 +27,7 @@
       <Filename Value="bin/lazarus-win64/CrossCVHello" />
     </Target>
     <SearchPaths>
-      <OtherUnitFiles Value="../pascal" />
+      <OtherUnitFiles Value="../../crosspascal/prepare;../pascal" />
       <UnitOutputDirectory Value="bin/lazarus-win64/units" />
     </SearchPaths>
     <Parsing>
@@ -36,6 +36,9 @@
       </SyntaxOptions>
     </Parsing>
     <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3" />
+      </Debugging>
       <Options>
         <Win32>
           <GraphicApplication Value="False" />

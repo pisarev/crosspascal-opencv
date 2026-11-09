@@ -9,7 +9,7 @@ program LoadResizeSave;
 uses
   {$IFDEF FPC}Interfaces, SysUtils, Classes, Forms, Dialogs, {$ELSE}
   System.SysUtils, System.Classes, Vcl.Forms, Vcl.Dialogs, {$ENDIF} OpenCV,
-  OpenCVTypes, OpenCVConsts;
+  OpenCVTypes, OpenCVConsts, ExampleDefaults;
 
 function ReadImageBytes(const Path: string): TBytes;
 var
@@ -41,6 +41,7 @@ begin
   LibraryPath := ExtractFilePath(ParamStr(0)) + 'crosscv.dll';
   if not FileExists(LibraryPath) then
     LibraryPath := ExpandFileName(ExtractFilePath(ParamStr(0)) + '..\..\..\bin\crosscv.dll');
+  LibraryPath := PreparedPath('opencv', LibraryPath);
   if not CVInitialize(LibraryPath) then
     raise Exception.Create('Cannot load crosscv.dll: ' + CV.Module.Error);
   try
@@ -87,6 +88,11 @@ var
   OpenDialog: TOpenDialog;
   SaveDialog: TSaveDialog;
 begin
+  if HasPreparedExample then
+  begin
+    ConvertImage(PreparedPath('input'), PreparedPath('output'));
+    Exit;
+  end;
   OpenDialog := TOpenDialog.Create(nil);
   SaveDialog := TSaveDialog.Create(nil);
   try
