@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-016",
+  "release_id": "early-access-017",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -723,17 +723,17 @@
     {
       "path": "prepare/prepare-bootstrap.json",
       "bytes": 299,
-      "sha256": "dde44100f2f753a1a424f95716a9bc3629777f4722c1dd9dbd463bf6a015d24a"
+      "sha256": "6d633a8ddb21b185843c99e0d5c83142a45e9bdec13da0773c6678acc8df9b17"
     },
     {
       "path": "prepare/prepare.py",
-      "bytes": 22242,
-      "sha256": "d2ab2e3cb894284b9799b0b3bae52065504f4904a181eaf0673d9048483ec00e"
+      "bytes": 23400,
+      "sha256": "e637e4e610a5e77428a2df2627f773c3605e0571cfe267b22ff165b970b3dda9"
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 3245,
-      "sha256": "c0112c1766aaede721f3c7d9abfdca94d8035a29f85db6d42d8b8e1f161efee8"
+      "bytes": 4248,
+      "sha256": "4c4e6eed0501cc4691ade8564eb1df78d19815dc20283fefa7533f8d497c0e8e"
     },
     {
       "path": "README.md",
