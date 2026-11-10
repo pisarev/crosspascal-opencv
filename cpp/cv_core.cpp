@@ -13,7 +13,7 @@
 #include <utility>
 
 
-// Pascal: TMakeMat = function(HSize, VSize, &Type: Integer): TMat; cdecl;
+
 CVAPI cv::Mat *cv_core_makeMat(int hSize, int vSize, int type) {
     cv_clear_error();
 
@@ -299,7 +299,7 @@ CVAPI int cv_core_getMatFormat(cv::Mat *mat, int *format) {
     }
 }
 
-// Pascal: TGetMatType = function(Image: TMat; &Type: PInteger): LongBool; cdecl;
+
 CVAPI int cv_core_getMatType(cv::Mat *mat, int *type) {
     cv_clear_error();
 
@@ -394,7 +394,7 @@ CVAPI int cv_core_readMat(cv::Mat *mat, ReadImage read, int depth, int n, void *
     }
 }
 
-// Pascal: TConvertType = function(Source: TMat; Target: PMat; &Type: Integer; Alpha, Beta: Double): LongBool; cdecl;
+
 CVAPI int cv_core_convertType(cv::Mat *src, cv::Mat **target, int rtype, double alpha, double beta) {
     cv_clear_error();
 
@@ -557,7 +557,7 @@ CVAPI int cv_core_bitwiseXor(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, cv:
     }
 }
 
-// Pascal: TOperation = function(Source1, Source2: TMat; Target: PMat; Alpha, Beta, Gamma: Double; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_operation(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, double alpha, double beta, double gamma, int dtype) {
     cv_clear_error();
 
@@ -578,7 +578,7 @@ CVAPI int cv_core_operation(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, doub
     }
 }
 
-// Pascal: TNormalize = function(Source: TMat; Target: PMat; Alpha, Beta: Double; NormType, DType: Integer; Mask: TMat): LongBool; cdecl;
+
 CVAPI int cv_core_normalize(cv::Mat *src, cv::Mat **target, double alpha, double beta, int normType, int dtype, cv::Mat *mask) {
     cv_clear_error();
 
@@ -659,7 +659,7 @@ CVAPI int cv_core_minAreaRect(cv::Mat *points, CVRotatedRect *result) {
 }
 
 
-// Pascal: TAdd = function(Source1, Source2: TMat; Target: PMat; Mask: TMat; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_add(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, cv::Mat *mask, int dtype) {
     cv_clear_error();
 
@@ -684,7 +684,7 @@ CVAPI int cv_core_add(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, cv::Mat *m
     }
 }
 
-// Pascal: TSubtract = function(Source1, Source2: TMat; Target: PMat; Mask: TMat; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_subtract(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, cv::Mat *mask, int dtype) {
     cv_clear_error();
 
@@ -709,7 +709,7 @@ CVAPI int cv_core_subtract(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, cv::M
     }
 }
 
-// Pascal: TMultiply = function(Source1, Source2: TMat; Target: PMat; Scale: Double; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_multiply(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, double scale, int dtype) {
     cv_clear_error();
 
@@ -730,7 +730,7 @@ CVAPI int cv_core_multiply(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, doubl
     }
 }
 
-// Pascal: TDivide = function(Source1, Source2: TMat; Target: PMat; Scale: Double; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_divide(cv::Mat *src1, cv::Mat *src2, cv::Mat **target, double scale, int dtype) {
     cv_clear_error();
 
@@ -1299,7 +1299,7 @@ CVAPI int cv_core_setIdentity(cv::Mat **pmat, CVScalar value) {
     }
 }
 
-// Pascal: TReduce = function(Source: TMat; Target: PMat; Dim, ReduceType, DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_reduce(cv::Mat *src, cv::Mat **target, int dim, int rtype, int dtype) {
     cv_clear_error();
 
@@ -1352,7 +1352,7 @@ CVAPI int cv_core_minMaxLoc(cv::Mat *src, double *minVal, double *maxVal, CVPoin
     }
 }
 
-// Pascal: TNorm = function(Source: TMat; NormType: Integer; Mask: TMat): Double; cdecl;
+
 CVAPI double cv_core_norm(cv::Mat *src, int normType, cv::Mat *mask) {
     cv_clear_error();
 
@@ -1375,7 +1375,7 @@ CVAPI double cv_core_norm(cv::Mat *src, int normType, cv::Mat *mask) {
 }
 
 
-// Pascal: TAddWeighted = function(Source1: TMat; Alpha: Double; Source2: TMat; Beta, Gamma: Double; Target: PMat; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_addWeighted(cv::Mat *src1, double alpha, cv::Mat *src2, double beta, double gamma, cv::Mat **target, int dtype) {
     cv_clear_error();
 
@@ -1438,7 +1438,7 @@ CVAPI int cv_core_gemm(cv::Mat *src1, cv::Mat *src2, double alpha, cv::Mat *src3
     }
 }
 
-// Pascal: TMulTransposed = function(Source: TMat; Target: PMat; ATa: LongBool; Delta: TMat; Scale: Double; DType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_mulTransposed(cv::Mat *src, cv::Mat **target, int aTa, cv::Mat *delta, double scale, int dtype) {
     cv_clear_error();
 
@@ -1592,7 +1592,7 @@ CVAPI int cv_core_rotate(cv::Mat *src, cv::Mat **target, int rotateCode) {
     }
 }
 
-// Pascal: TCopyMakeBorder = function(Source: TMat; Target: PMat; Top, Bottom, Left, Right, BorderType: Integer; Value: TOCVScalar): LongBool; cdecl;
+
 CVAPI int cv_core_copyMakeBorder(cv::Mat *src, cv::Mat **target, int top, int bottom, int left, int right, int borderType, CVScalar value) {
     cv_clear_error();
 
@@ -1927,7 +1927,7 @@ CVAPI int cv_core_mulSpectrums(cv::Mat *a, cv::Mat *b, cv::Mat **c, int flags, i
 }
 
 
-// Pascal: TCalcCovarMatrix = function(Samples: TMat; Covar, Mean: PMat; Flags, CType: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_calcCovarMatrix(cv::Mat *samples, cv::Mat **covar, cv::Mat **mean, int flags, int ctype) {
     cv_clear_error();
     if (!samples || !covar || !mean || covar == mean) {
@@ -2017,7 +2017,7 @@ CVAPI int cv_core_convertFp16(cv::Mat *src, cv::Mat **target) {
     }
 }
 
-// Pascal: TBorderInterpolate = function(P, Len, BorderType: Integer): Integer; cdecl;
+
 CVAPI int cv_core_borderInterpolate(int p, int len, int borderType) {
     cv_clear_error();
     try {
@@ -2526,7 +2526,7 @@ CVAPI int cv_core_hasNonZero(cv::Mat *src) {
 }
 
 
-// Pascal: TBatchDistance = function(Source1, Source2: TMat; Dist: PMat; DType: Integer; NIdx: PMat; NormType, K: Integer): LongBool; cdecl;
+
 CVAPI int cv_core_batchDistance(cv::Mat *src1, cv::Mat *src2, cv::Mat **dist, int dtype, cv::Mat **nidx, int normType, int K) {
     cv_clear_error();
     if (!src1 || !src2 || !dist || K < 0 || (K > 0 && !nidx) || dist == nidx) {
@@ -2826,7 +2826,7 @@ CVAPI int cv_core_copyToMasked(cv::Mat *src, cv::Mat **target, cv::Mat *mask) {
 }
 
 
-// Pascal: TCreateFileStorage = function(Filename: PAnsiChar; Flags: Integer; Encoding: PAnsiChar): Pointer; cdecl;
+
 CVAPI void *cv_core_createFileStorage(const char *filename, int flags, const char *encoding) {
     cv_clear_error();
 
@@ -2864,7 +2864,7 @@ CVAPI void cv_core_deleteFileStorage(void *fs) {
     }
 }
 
-// Pascal: TFileStorageOpen = function(FS: Pointer; Filename: PAnsiChar; Flags: Integer; Encoding: PAnsiChar): LongBool; cdecl;
+
 CVAPI int cv_core_fileStorageOpen(void *fs, const char *filename, int flags, const char *encoding) {
     cv_clear_error();
 

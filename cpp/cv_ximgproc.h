@@ -54,8 +54,8 @@ CVAPI void cv_ximgproc_fastLineDetectorDrawSegmentsEx(void *detector, cv::Mat **
 
 CVAPI void *cv_ximgproc_createEdgeBoxes(float alpha, float beta, float eta, float minScore, int maxBoxes, float edgeMinMag, float edgeMergeThr, float clusterMinMag, float maxAspectRatio, float minBoxArea, float gamma, float kappa);
 CVAPI void cv_ximgproc_deleteEdgeBoxes(void *edgeBoxes);
-// Pass a null buffer to query the required count. Otherwise supply capacity in *count.
-// Insufficient capacity reports the required count and leaves the buffer untouched.
+
+
 CVAPI void cv_ximgproc_edgeBoxesGetBoundingBoxes(void *edgeBoxes, cv::Mat *edgeMap, cv::Mat *orientationMap, CVRect *boxes, int *count);
 CVAPI float cv_ximgproc_edgeBoxesGetAlpha(void *edgeBoxes);
 CVAPI void cv_ximgproc_edgeBoxesSetAlpha(void *edgeBoxes, float value);
@@ -74,7 +74,7 @@ CVAPI void cv_ximgproc_selectiveSearchSetBaseImage(void *ss, cv::Mat *image);
 CVAPI void cv_ximgproc_selectiveSearchSwitchToSingleStrategy(void *ss, int k, float sigma);
 CVAPI void cv_ximgproc_selectiveSearchSwitchToSelectiveSearchFast(void *ss, int baseK, int incK, float sigma);
 CVAPI void cv_ximgproc_selectiveSearchSwitchToSelectiveSearchQuality(void *ss, int baseK, int incK, float sigma);
-// Uses the same count and capacity contract as cv_ximgproc_edgeBoxesGetBoundingBoxes.
+
 CVAPI void cv_ximgproc_selectiveSearchProcess(void *ss, CVRect *rects, int *count);
 CVAPI void cv_ximgproc_selectiveSearchAddImage(void *ss, cv::Mat *image);
 

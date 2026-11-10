@@ -1096,7 +1096,7 @@ CVAPI int cv_video_findTransformECC(cv::Mat *templateImage, cv::Mat *inputImage,
 
     try {
         auto warpMatrix = std::make_unique<cv::Mat>();
-        // Initialize warp matrix based on motion type
+
         if (motionType == cv::MOTION_HOMOGRAPHY)
             *warpMatrix = cv::Mat::eye(3, 3, CV_32F);
         else
@@ -1172,7 +1172,7 @@ CVAPI int cv_video_computeECC(cv::Mat *templateImage, cv::Mat *inputImage, cv::M
 }
 
 
-// Pascal: TCreateKalmanFilter = function(DynamParams, MeasureParams, ControlParams, Type: Integer): Pointer;
+
 CVAPI void *cv_video_createKalmanFilter(int dynamParams, int measureParams, int controlParams, int type)
 {
     cv_clear_error();

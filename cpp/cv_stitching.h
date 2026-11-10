@@ -15,7 +15,7 @@ CVAPI int cv_stitching_estimateTransform(void *stitcher, cv::Mat **images, int i
 CVAPI int cv_stitching_setPanoConfidenceThresh(void *stitcher, double confThresh);
 CVAPI int cv_stitching_getPanoConfidenceThresh(void *stitcher, double *confThresh);
 
-// Call after a successful estimateTransform. Each call with an output consumes the estimate.
+
 CVAPI int cv_stitching_composePanorama(void *stitcher, cv::Mat **pano);
 CVAPI int cv_stitching_setRegistrationResol(void *stitcher, double resol);
 CVAPI int cv_stitching_setSeamEstimationResol(void *stitcher, double resol);

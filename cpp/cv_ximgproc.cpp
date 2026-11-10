@@ -8,7 +8,7 @@
 #include <vector>
 
 
-// Pascal: TThinning = function(Source: TMat; Target: PMat; ThinningType: Integer): LongBool; cdecl;
+
 
 
 CVAPI int cv_ximgproc_thinning(cv::Mat *src, cv::Mat **dst, int thinningType)

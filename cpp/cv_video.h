@@ -59,7 +59,7 @@ CVAPI int cv_video_estimateRigidTransform(cv::Mat *src, cv::Mat *dst, cv::Mat **
 
 CVAPI int cv_video_computeECC(cv::Mat *templateImage, cv::Mat *inputImage, cv::Mat *inputMask, double *result);
 
-// Pascal: TCreateKalmanFilter = function(DynamParams, MeasureParams, ControlParams, Type: Integer): Pointer;
+
 CVAPI void *cv_video_createKalmanFilter(int dynamParams, int measureParams, int controlParams, int type);
 
 CVAPI int cv_video_deleteKalmanFilter(void *kf);

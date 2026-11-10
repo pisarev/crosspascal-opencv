@@ -14,7 +14,7 @@
 #include <limits>
 
 
-// The Doxa-named API uses the local image and thresholding routines below.
+
 namespace Doxa {
 
 class Image {
@@ -219,7 +219,7 @@ static void trsinghThreshold(const Image &src, Image &dst, int windowSize, doubl
 }
 
 
-// This variant uses a fixed local window and the global standard deviation.
+
 
 static void batainehThreshold(const Image &src, Image &dst, int windowSize, double k)
 {
@@ -250,7 +250,7 @@ static void batainehThreshold(const Image &src, Image &dst, int windowSize, doub
 }
 
 
-// Like Sauvola but with dynamic R based on maximum local standard deviation
+
 
 static void isauvolaThreshold(const Image &src, Image &dst, int windowSize, double k)
 {
@@ -399,7 +399,7 @@ static void bernsenThreshold(const Image &src, Image &dst, int windowSize, doubl
 
             int contrast = localMax - localMin;
             if (contrast < contrastMin) {
-                // Low contrast region: use midpoint
+
                 dst.pixel(x, y) = ((localMax + localMin) / 2 >= 128) ? 255 : 0;
             } else {
                 double threshold = (localMax + localMin) / 2.0;
@@ -709,7 +709,7 @@ CVAPI int cv_custom_searchTemplate(cv::Mat *source, cv::Mat *templ, double thres
             for (int i = 0; i < count; i++) {
                 double scale = 1.0;
                 double angle = 0.0;
-                // Extract the matched region as a slice
+
                 cv::Rect roi(results[i].a.x, results[i].a.y, tw, th);
                 cv::Mat slice = (*source)(roi);
                 cv::Mat *slicePtr = &slice;
@@ -1002,7 +1002,7 @@ CVAPI int cv_custom_normalizedGrayLevelVariance(cv::Mat *src, double *value)
 }
 
 
-// algorithmType: 0 = MOG2, 1 = KNN
+
 
 
 struct BGSHolder {

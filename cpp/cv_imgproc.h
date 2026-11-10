@@ -147,7 +147,7 @@ CVAPI int cv_imgproc_approxPolyDP(cv::Mat *curve, cv::Mat **pApproxCurve, double
 CVAPI int cv_imgproc_HuMoments(CVMoments *moments, double *hu);
 
 
-// Allocate maxlevel + 1 output slots. On success count reports the written slots.
+
 CVAPI int cv_imgproc_buildPyramid(cv::Mat *src, cv::Mat **pDst, int *count, int maxlevel, int borderType);
 
 
@@ -212,8 +212,8 @@ CVAPI int cv_imgproc_deleteGeneralizedHough(void *hough);
 CVAPI int cv_imgproc_blendLinear(cv::Mat *src1, cv::Mat *src2, cv::Mat *weights1, cv::Mat *weights2, cv::Mat **pDst);
 
 
-// Pass null contours to query the count. Otherwise supply capacity in *contourCount.
-// A short buffer stays unchanged and the call returns zero and the required count.
+
+
 CVAPI int cv_imgproc_findContoursLinkRuns(cv::Mat *image, cv::Mat **pContours, int *contourCount);
 
 
