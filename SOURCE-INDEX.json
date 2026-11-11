@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-017",
+  "release_id": "early-access-018",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -62,13 +62,13 @@
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 4193,
-      "sha256": "3cffe79aeec8bd61bf7e0e5be71a8bc2fb832f3cf344a888f29252a99dbf177a"
+      "bytes": 4066,
+      "sha256": "f9dc6ad0c134e76fa3526f8abd17b62b9e937d3559688cb6b4e67a106fa756c3"
     },
     {
       "path": "README.md",
       "bytes": 2886,
-      "sha256": "b21c677af5ce6493840637d8774ca2aadfc7b27dceb0fe00f1271ecefca00dd2"
+      "sha256": "a34f44f33fd67d36a0a6416526f380865d134241492482322404194157bc7ef4"
     },
     {
       "path": "TESTING.md",
@@ -367,18 +367,18 @@
     },
     {
       "path": "examples/Prepare-CrossCVHello.cmd",
-      "bytes": 268,
-      "sha256": "fc87965050ed8b83175baf2a4adb25cc82f1253910cb8ba8ab58d93ab908601a"
+      "bytes": 318,
+      "sha256": "6c7995e0676906e987b1ad3c469a997d76af27f29862185fdba8633254126b7e"
     },
     {
       "path": "examples/Prepare-LoadResizeSave.cmd",
-      "bytes": 270,
-      "sha256": "866af12c00280fa3b7a19b28bf818380833ed15e110bbaf019a8eed0f09a6689"
+      "bytes": 320,
+      "sha256": "6ed5cf7d83c1c103b36b15027aeaa9f682b4b81a4887be2e8c3e8370370e9735"
     },
     {
       "path": "examples/Prepare.cmd",
-      "bytes": 244,
-      "sha256": "1962043f2d641b409fae27cb54d869f2442b88c2c0986f7ca3573814f186e6e6"
+      "bytes": 294,
+      "sha256": "0508f6cd909ffa3de889369fa48c6f4d2ad64a18a7d97936e93352408b632622"
     },
     {
       "path": "licenses/dav1d/COPYING",
@@ -737,18 +737,13 @@
     },
     {
       "path": "prepare/bootstrap.ps1",
-      "bytes": 2424,
-      "sha256": "2b5a0613df7e6c0913a58caed45b009110cc820cb59c86ade8186409d3d0b474"
+      "bytes": 31128,
+      "sha256": "e6ec4f64d2badbbe1393596c40764d97a2a2a33deca052e0a745d2a2dc70d6f2"
     },
     {
       "path": "prepare/prepare-bootstrap.json",
-      "bytes": 299,
-      "sha256": "6d633a8ddb21b185843c99e0d5c83142a45e9bdec13da0773c6678acc8df9b17"
-    },
-    {
-      "path": "prepare/prepare.py",
-      "bytes": 23396,
-      "sha256": "af3a6e8de7602c67c3f7ce162623b42c16160b9cba2aed53659482acf8922aa7"
+      "bytes": 83,
+      "sha256": "4194be4d92ed1b33f13b7c188d1717d693bbb32518347c9e6de3f051e2a1c906"
     },
     {
       "path": "scripts/verify_source.py",
