@@ -62,8 +62,8 @@
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 5633,
-      "sha256": "75ab7df0c68e018b69fb32e52efdc81045d2d80f1871cb5d2442cfa6885c9f88"
+      "bytes": 6386,
+      "sha256": "3101a41d993487a4de67f5fbba659916e0a3932b37258f12048c80605f1b0f02"
     },
     {
       "path": "README.md",
@@ -737,8 +737,8 @@
     },
     {
       "path": "prepare/bootstrap.ps1",
-      "bytes": 37618,
-      "sha256": "447514cc52c5beab8dcfebe2486fd0722aa83718c632bb4c9b30eec08dca8a9b"
+      "bytes": 38442,
+      "sha256": "48dde4cd8be8a72d06cac395b5a333b43e4f4e1e6c0c0ba00a62cabb98c7cf27"
     },
     {
       "path": "prepare/prepare-bootstrap.json",

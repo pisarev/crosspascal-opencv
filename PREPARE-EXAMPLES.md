@@ -26,8 +26,17 @@ Lazarus; Delphi builds verify source compatibility.
 The default installation is %LOCALAPPDATA%/CrossPascal/early-access-019. Set
 CROSSPASCAL_PREPARE_HOME before running Prepare.cmd to choose another drive.
 Downloads use a sibling downloads folder. Repeating preparation preserves your
-editable source and settings changes. A changed fixed dependency requires a new
-installation folder. Prepare checks disk space before extraction.
+source, project and package settings, and locally rebuilt example executables.
+Runtime libraries, converters and models are still checked against their recorded
+SHA-256 values. A missing SDK file or changed fixed dependency is reported with
+its exact path; preserve your work and use a new installation folder. Prepare
+checks disk space before extraction.
+
+## Download one vision model
+
+SqueezeNet 1.1, ResNet50 v1, YOLO11n classification, YOLO11n detection and RT-DETR R18vd each have separate CPU and GPU preparation ZIPs. [Choose a model and device](VISION-DOWNLOADS.md). These kits download only the selected model plus shared dependencies; the original all-five-model kit remains available.
+
+Each ZIP contains an enclosing folder. Extract it, open that folder and run `Prepare.cmd`. The dedicated CPU/GPU kit already sets its device. The generic kits below retain `-Device` and Auto selection.
 
 ## CPU or CUDA
 
