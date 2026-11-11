@@ -2,9 +2,9 @@
 
 ## Prepare and Run
 
-Download [Prepare-CrossCVHello-ea016.zip](https://github.com/pisarev/crosspascal/releases/download/early-access-016/Prepare-CrossCVHello-ea016.zip), extract it, and double-click **Prepare.cmd**. It downloads the matched dependencies and sample data, then opens the prepared project folder. Open the **.dproj** in Delphi 13.2 or the **.lpi** in Lazarus 4.8, and press **Run**. See the [complete preparation guide](https://github.com/pisarev/crosspascal/blob/main/docs/PREPARE-EXAMPLES.md) for public downloads and optional GitHub request-limit recovery, model sizes and the other examples.
+Download [Prepare-CrossCVHello-ea017.zip](https://github.com/pisarev/crosspascal/releases/download/early-access-017/Prepare-CrossCVHello-ea017.zip), extract it, and double-click **Prepare.cmd**. It downloads the matched dependencies and sample data, then opens the prepared project folder. Open the **.dproj** in Delphi 13.2 or the **.lpi** in Lazarus 4.8, and press **Run**. See the [complete preparation guide](https://github.com/pisarev/crosspascal/blob/main/docs/PREPARE-EXAMPLES.md) for public downloads and optional GitHub request-limit recovery, model sizes and the other examples.
 
-Use [Prepare-LoadResizeSave-ea016.zip](https://github.com/pisarev/crosspascal/releases/download/early-access-016/Prepare-LoadResizeSave-ea016.zip) for the image-resizing example. The native companion retains its complete matching source and licences.
+Use [Prepare-LoadResizeSave-ea017.zip](https://github.com/pisarev/crosspascal/releases/download/early-access-017/Prepare-LoadResizeSave-ea017.zip) for the image-resizing example. The native companion retains its complete matching source and licences.
 
 
 Use OpenCV from Object Pascal to load and transform images, manage native image buffers, and add video I/O to a Windows application. The component includes bindings for OpenCV 4.10.0, the CrossCV bridge source, and an interface that manages the lifetime of native Mat objects.
@@ -16,7 +16,7 @@ Use OpenCV from Object Pascal to load and transform images, manage native image 
 3. Build and run the project. It prints the loaded DLL path, the bridge ABI, a pixel sum of **84**, and **12** nonzero pixels.
 4. Open the corresponding `LoadResizeSave` project, choose a photograph, and save a 640 × 480 PNG.
 
-Both examples use the relative unit paths in their project files. The Lazarus build has its own output directory. A standalone install needs this repository and its matching native source asset. Python model conversion and TVM are separate.
+Both examples use the relative unit paths in their project files. The Lazarus build has its own output directory. A standalone install needs this repository and its matching native source asset. Model conversion and TVM are separate.
 
 Use the Delphi or Lazarus runtime package in [packages](packages/) for reusable bindings. Read [the build notes](BUILD.md), [known issues](KNOWN-ISSUES.md), and [third-party notices](THIRD-PARTY-NOTICES.md) for the matching bridge, build settings, upstream notices, and component limits.
 
