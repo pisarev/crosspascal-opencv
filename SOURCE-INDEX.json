@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-018",
+  "release_id": "early-access-019",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -62,13 +62,13 @@
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 4066,
-      "sha256": "f9dc6ad0c134e76fa3526f8abd17b62b9e937d3559688cb6b4e67a106fa756c3"
+      "bytes": 5633,
+      "sha256": "75ab7df0c68e018b69fb32e52efdc81045d2d80f1871cb5d2442cfa6885c9f88"
     },
     {
       "path": "README.md",
       "bytes": 2886,
-      "sha256": "a34f44f33fd67d36a0a6416526f380865d134241492482322404194157bc7ef4"
+      "sha256": "2ea759866b9920b815b7bc730cf270ebd34cfd9517f43683882c4ba1e38ed0a0"
     },
     {
       "path": "TESTING.md",
@@ -737,13 +737,13 @@
     },
     {
       "path": "prepare/bootstrap.ps1",
-      "bytes": 31128,
-      "sha256": "e6ec4f64d2badbbe1393596c40764d97a2a2a33deca052e0a745d2a2dc70d6f2"
+      "bytes": 37618,
+      "sha256": "447514cc52c5beab8dcfebe2486fd0722aa83718c632bb4c9b30eec08dca8a9b"
     },
     {
       "path": "prepare/prepare-bootstrap.json",
       "bytes": 83,
-      "sha256": "4194be4d92ed1b33f13b7c188d1717d693bbb32518347c9e6de3f051e2a1c906"
+      "sha256": "79504cb6d4c8b5e0f729ff422ac5ce9bab5c487d97b9ae728d96d965dbdd86ab"
     },
     {
       "path": "scripts/verify_source.py",
