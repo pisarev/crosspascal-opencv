@@ -2,7 +2,7 @@
 {                                                                            }
 { OpenCV.XImgProc                                                            }
 {                                                                            }
-{ Copyright © 2026 Yuriy Pisarev (ypisareff@outlook.com)                     }
+{ Copyright © 2026 Yuriy Pisarev                                             }
 {                                                                            }
 { ************************************************************************** }
 

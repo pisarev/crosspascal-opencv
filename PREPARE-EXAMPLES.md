@@ -34,7 +34,7 @@ checks disk space before extraction.
 
 ## Download one vision model
 
-SqueezeNet 1.1, ResNet50 v1, YOLO11n classification, YOLO11n detection and RT-DETR R18vd each have separate CPU and GPU preparation ZIPs. [Choose a model and device](VISION-DOWNLOADS.md). These kits download only the selected model plus shared dependencies; the original all-five-model kit remains available.
+SqueezeNet 1.1, ResNet50 v1, YOLO11n classification, YOLO11n detection and RT-DETR R18vd each have separate CPU and GPU preparation ZIPs. [Choose a model and device](https://github.com/pisarev/crosspascal/blob/main/docs/VISION-DOWNLOADS.md). These kits download only the selected model plus shared dependencies; the original all-five-model kit remains available.
 
 Each ZIP contains an enclosing folder. Extract it, open that folder and run `Prepare.cmd`. The dedicated CPU/GPU kit already sets its device. The generic kits below retain `-Device` and Auto selection.
 
@@ -86,7 +86,7 @@ CPU model downloads are about 3.6 GiB for Gemma 2, 11.4 GiB for Gemma 3n, and
 for the selected CPU or CUDA package. The packs contain their licenses, NOTICE, modification
 records and checksums. Preserve these when redistributing. Gemma use restrictions
 apply to the supplied derivatives and must be carried into onward distribution
-agreements. See [license scope](LICENSE-SCOPE.md) for code, libraries and relinking.
+agreements. See [license scope](https://github.com/pisarev/crosspascal/blob/main/docs/LICENSE-SCOPE.md) for code, libraries and relinking.
 
 QwenChat and GemmaChat: click Load model, then Generate. Auto (0) uses the available
 context; Stop remains available. Image-capable profiles accept one image. Console
