@@ -337,8 +337,8 @@
     },
     {
       "path": "examples/CrossCVHello.dpr",
-      "bytes": 2559,
-      "sha256": "d6b0c9cc464960a1ac23630454de715bcfef12a6d1dd4cb490cc680638f4ce7e"
+      "bytes": 3117,
+      "sha256": "8cffda192f35b623e08ba14b92139c4181d90a1d983841b4224d65be84e0f426"
     },
     {
       "path": "examples/CrossCVHello.dproj",
@@ -352,8 +352,8 @@
     },
     {
       "path": "examples/LoadResizeSave.dpr",
-      "bytes": 4368,
-      "sha256": "7cd45195fce2efa964e96f1984c72de1d58d902ffafb8664f9ab4db767c1256c"
+      "bytes": 4926,
+      "sha256": "694b319e598562cfce50afff4af4539c5f24f6443314cfaa0644081e1af527c6"
     },
     {
       "path": "examples/LoadResizeSave.dproj",
@@ -607,133 +607,133 @@
     },
     {
       "path": "pascal/CrossVision.Mat.pas",
-      "bytes": 45308,
-      "sha256": "62382b5f9277c6578bd06bbb87c0cfba42dcf29eb844a1ca18bebc495bca5483"
+      "bytes": 45311,
+      "sha256": "20c82770787f134dcde898efd834cd7337fe3b0c547deed6eccf521f00bdcb09"
     },
     {
       "path": "pascal/OpenCV.Aruco.pas",
-      "bytes": 14328,
-      "sha256": "fb761b077e8cb81ce2923dffa029bb2a21be6ee3589a20fecd0ee27efd681be9"
+      "bytes": 14331,
+      "sha256": "fffd9631fc093897ba9f42e045c624fc9f49d723a96f93f3eca94dea75daf5d2"
     },
     {
       "path": "pascal/OpenCV.Bioinspired.pas",
-      "bytes": 1989,
-      "sha256": "2392889b2f4eb4ee56d077738aa3cd7a323f1a223d470968867d1990538ced17"
+      "bytes": 1992,
+      "sha256": "26d04ee534ddf8cd25c3917fe4ad157bbcc0b15ddca9d507cbc7a37156281e3f"
     },
     {
       "path": "pascal/OpenCV.Calib3D.pas",
-      "bytes": 24716,
-      "sha256": "a5bb8d31003d91bcd03a586b21f80810ef4da9adf5013a41432c4ea0d5dc8162"
+      "bytes": 24719,
+      "sha256": "8f5df0b97fc029cde65592f59e95c3e82112c2027ac54a518a9271d997e85eb1"
     },
     {
       "path": "pascal/OpenCV.Core.pas",
-      "bytes": 26687,
-      "sha256": "ccad8b01514a6ef74bd4a7f9087c95fbba0bd7145c7b1476abe87453eec97880"
+      "bytes": 26690,
+      "sha256": "bf08d664600b1585058d9a6010b116aa9c147da5c0a1f6de6de17d8d27c42ad4"
     },
     {
       "path": "pascal/OpenCV.Custom.pas",
-      "bytes": 7254,
-      "sha256": "6b0a2428afd59b50f28b5e45c51e08797dcb86130f426419b138ea973b40498e"
+      "bytes": 7257,
+      "sha256": "2e216943cd09df9398fb9c864fbc9046454dfcf6cf07476ce8ec97d25821e4d2"
     },
     {
       "path": "pascal/OpenCV.Dnn.pas",
-      "bytes": 16199,
-      "sha256": "fadc47cbf54e2438417a6e889ab65d91fe3e11025dea4537f7cb53e31905207f"
+      "bytes": 16202,
+      "sha256": "6294133993278df10b12c07d50e49af353217a3fa933ac0160f9a27a58c80869"
     },
     {
       "path": "pascal/OpenCV.Face.pas",
-      "bytes": 7789,
-      "sha256": "810a565832d8af07c95286e536c13b02fd9d424ff5d8fc3e659677b25e14ffe0"
+      "bytes": 7792,
+      "sha256": "2b0ddfd6217c5154e03c3c1cc551abce99ff1a0bd5ce8f14dd0ededc17859a4e"
     },
     {
       "path": "pascal/OpenCV.Features2D.pas",
-      "bytes": 22202,
-      "sha256": "c586a7e68a984da200a21918ceed900c9056d5a3084abe460bf269cb706b4f2e"
+      "bytes": 22205,
+      "sha256": "676d4082c96dd5de10905b1be8540267d55a8ceaa76bfa57b843a11148904d96"
     },
     {
       "path": "pascal/OpenCV.HighGui.pas",
-      "bytes": 5219,
-      "sha256": "b1ed19001bd8815419b56bace796c00a90f9cd21e351977b6fb6cad6e3f97ad2"
+      "bytes": 5222,
+      "sha256": "d18cd75472c03dae0f9c8e2094b92aa395853ff8dcf5f28924f17ece2ef211d3"
     },
     {
       "path": "pascal/OpenCV.ImgCodecs.pas",
-      "bytes": 2570,
-      "sha256": "5f2f716390693349dfe2eac2512f0474a710a77cebad10f060a8c942a5995f8f"
+      "bytes": 2573,
+      "sha256": "93c269bdfac6da254c541839f5944a062b2870f70abe19ac9a76184bbc04985c"
     },
     {
       "path": "pascal/OpenCV.ImgProc.pas",
-      "bytes": 46710,
-      "sha256": "42cd91ef60959f5a3cd662dcef93679787965ed3118e2ec1e739e807fd68f6e4"
+      "bytes": 46713,
+      "sha256": "5fa7afe27c04350ba1f42fdae46297073eba6fbe7c19ab2ae05ee05a19bd30c1"
     },
     {
       "path": "pascal/OpenCV.Ml.pas",
-      "bytes": 28042,
-      "sha256": "2eb231e0655df659ade9f99f41e3bf6df6ef01dce79578e6d0221c8e25607e92"
+      "bytes": 28045,
+      "sha256": "db2b8ae862e3d406f2e25fe077b99a64cbb5a9d6dfb71799f93abe73b4113901"
     },
     {
       "path": "pascal/OpenCV.ObjDetect.pas",
-      "bytes": 14340,
-      "sha256": "96457e882d9a5123840481f0cb9fa5abbaeac8975a33ad3363b4465985478b4b"
+      "bytes": 14343,
+      "sha256": "3a83cc5a582cb209169f4dfda8730a9acda0b0d2b8ea01432acd3f79982fe127"
     },
     {
       "path": "pascal/OpenCV.Optflow.pas",
-      "bytes": 7701,
-      "sha256": "1ea82673d64d45ac04760bf13276f6fb6865934919281f38af6c5809c1b3f693"
+      "bytes": 7704,
+      "sha256": "c669f7c4b4ee19f5c8de44303a88918565eb2dec41dd6597fa0653e87731cb23"
     },
     {
       "path": "pascal/OpenCV.Photo.pas",
-      "bytes": 20657,
-      "sha256": "99e8ac740d2a2bbe4ae61a9b09298af94eb0f0c0a6833e32de1d5d909e299e29"
+      "bytes": 20660,
+      "sha256": "4af455614ce0d20d0cf9133026c87550e1919dd5c2f2b12aacebde78accd3d5f"
     },
     {
       "path": "pascal/OpenCV.Stitching.pas",
-      "bytes": 4921,
-      "sha256": "c7c2c623eb63961dda934819a00c63d08dca89bf5c2607859b70079c3a82e807"
+      "bytes": 4924,
+      "sha256": "7f4cf7e736d409018fc3b0eea4693220b1f3560d0969461392729910d680a957"
     },
     {
       "path": "pascal/OpenCV.Tracking.pas",
-      "bytes": 2508,
-      "sha256": "a4426d24085c213f0a0bb43ae484d697e6e6db55d209738707107aa24bc8bbae"
+      "bytes": 2511,
+      "sha256": "605a30f1cde4313e771288593d3565a13c0995972f3edc3dc341ae110773f75f"
     },
     {
       "path": "pascal/OpenCV.Video.pas",
-      "bytes": 31707,
-      "sha256": "b9d1e4f9e34b60a5d13441c43de2878c302833066ce08e2c285393d41bb67d88"
+      "bytes": 31710,
+      "sha256": "7583b4e5902dd522ecfe9fb877b9837d633f1b6cbbeaf62f55e8c338f884d831"
     },
     {
       "path": "pascal/OpenCV.VideoIO.pas",
-      "bytes": 6246,
-      "sha256": "8993cb8f46caed0aebfb04bf3b5a8959edbca60b36a96816e8e013ab66ab7c6d"
+      "bytes": 6249,
+      "sha256": "fdd9ff3c36f951efc922a7313a51e803719f201f91a126340ca8e6c545ca4954"
     },
     {
       "path": "pascal/OpenCV.XFeatures2D.pas",
-      "bytes": 8497,
-      "sha256": "c8c7713d6a4413efffec02da36bec7cd6b4a6259da48cc5651d99d3086abfbec"
+      "bytes": 8500,
+      "sha256": "9d23b4cf511ed343c727fab506e65c4571020ce57d8bfa5fdf9a86e4265a3075"
     },
     {
       "path": "pascal/OpenCV.XImgProc.pas",
-      "bytes": 17746,
-      "sha256": "0ea977202ad2a1522c0e2538ca962c805ac88dd740e91a4c300e56fc51ca50e3"
+      "bytes": 17749,
+      "sha256": "f18de9cb37734909d42df4fe1c2bb184134a15b07e09cb0fb4ca8a8a09be334b"
     },
     {
       "path": "pascal/OpenCV.XPhoto.pas",
-      "bytes": 5955,
-      "sha256": "b96a0f923b556b9df6f6b663fed119f5e73ad00f517f5b3d4e239b10c2ed2198"
+      "bytes": 5958,
+      "sha256": "e2c1ed77f0e928708048d4ef12d2e81b98a68491e1b4303b7bcb770515a761c9"
     },
     {
       "path": "pascal/OpenCV.pas",
-      "bytes": 15033,
-      "sha256": "6e664ec0554ed7ca6a6c97e72ce07af871ea5ff7bbd9f4bf8116b4cdc012123d"
+      "bytes": 15036,
+      "sha256": "d531bc8968300fea31d329e5787fa6e4336b875f5ea01a26f83c328b57390389"
     },
     {
       "path": "pascal/OpenCVConsts.pas",
-      "bytes": 29582,
-      "sha256": "40c46ebd8e6492c4fbf54fa4a827018c9d1fa26d6423fb40bf0df6aee0d38fb1"
+      "bytes": 29585,
+      "sha256": "532030f9a3f79d88d7bc473b05872b1773fa79d93050777ab36fdc92553ab318"
     },
     {
       "path": "pascal/OpenCVTypes.pas",
-      "bytes": 17292,
-      "sha256": "b8fbb088a6363f266e07300c0601389db9fe8f3b2a792badb7610b945bf8b1c7"
+      "bytes": 17295,
+      "sha256": "ba328260b7d80a62e6d6659eb1b11802135305097613b911d4dc7d4f11e13153"
     },
     {
       "path": "prepare/bootstrap.ps1",
