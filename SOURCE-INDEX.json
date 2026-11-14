@@ -337,8 +337,8 @@
     },
     {
       "path": "examples/CrossCVHello.dpr",
-      "bytes": 3117,
-      "sha256": "8cffda192f35b623e08ba14b92139c4181d90a1d983841b4224d65be84e0f426"
+      "bytes": 2562,
+      "sha256": "15427c3394ba07fb8ad88b5b8914f5f1926e19890193e32dd856b74ca6df5ab5"
     },
     {
       "path": "examples/CrossCVHello.dproj",
@@ -352,8 +352,8 @@
     },
     {
       "path": "examples/LoadResizeSave.dpr",
-      "bytes": 4926,
-      "sha256": "694b319e598562cfce50afff4af4539c5f24f6443314cfaa0644081e1af527c6"
+      "bytes": 4371,
+      "sha256": "315c0f92f495c223cdb8c2e6f358d01480c53a3403cb116597af33d5d5d8015f"
     },
     {
       "path": "examples/LoadResizeSave.dproj",

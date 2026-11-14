@@ -1,12 +1,4 @@
-﻿{ ************************************************************************** }
-{                                                                            }
-{ CrossCVHello                                                               }
-{                                                                            }
-{ Copyright © 2026 Yuriy Pisarev                                             }
-{                                                                            }
-{ ************************************************************************** }
-
-program CrossCVHello;
+﻿program CrossCVHello;
 
 {$IFDEF FPC}
 {$MODE DELPHIUNICODE}

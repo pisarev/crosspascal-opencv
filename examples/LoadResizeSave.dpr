@@ -1,12 +1,4 @@
-﻿{ ************************************************************************** }
-{                                                                            }
-{ LoadResizeSave                                                             }
-{                                                                            }
-{ Copyright © 2026 Yuriy Pisarev                                             }
-{                                                                            }
-{ ************************************************************************** }
-
-program LoadResizeSave;
+﻿program LoadResizeSave;
 
 {$IFDEF FPC}
 {$MODE DELPHIUNICODE}
