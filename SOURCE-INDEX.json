@@ -597,8 +597,8 @@
     },
     {
       "path": "packages/delphi/crosspascal_crossopencv.dpk",
-      "bytes": 2082,
-      "sha256": "d48049bc76ebdb173ef036c92cad527620a47e7ac56e87e49c872fdcbed1eec9"
+      "bytes": 2085,
+      "sha256": "a0507f174949702b7f9d64e552d5bf9ac46f8facccd14dbdc67db97396a277ee"
     },
     {
       "path": "packages/lazarus/crosspascal_crosscv.lpk",
