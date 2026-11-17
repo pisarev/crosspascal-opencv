@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-019",
+  "release_id": "early-access-023",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -62,13 +62,13 @@
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 6494,
-      "sha256": "65775a75ac9f5f23b2ccc535fb1f398a7bef895287968bdf19cb08325672812b"
+      "bytes": 1256,
+      "sha256": "e727f440c1d3d305843fda32854822967ff611978aa68428f13933fd89af2bd8"
     },
     {
       "path": "README.md",
       "bytes": 2886,
-      "sha256": "2ea759866b9920b815b7bc730cf270ebd34cfd9517f43683882c4ba1e38ed0a0"
+      "sha256": "20978970e80bb670f7399d31342ce07188161a4269ccab1df662e1ceb97d6765"
     },
     {
       "path": "TESTING.md",
@@ -342,13 +342,13 @@
     },
     {
       "path": "examples/CrossCVHello.dproj",
-      "bytes": 10648,
-      "sha256": "aa40b1f91ee6bb13ad91d49b428c2b5098b34c07940a966dd8796958f44abb57"
+      "bytes": 10945,
+      "sha256": "74c68ca4a330dfaee7dcbf4f689f5d336cd3955e1af9d4addae009590231b04a"
     },
     {
       "path": "examples/CrossCVHello.lpi",
-      "bytes": 1338,
-      "sha256": "a99284a832690f3279dba8abbbf7178def8e99a7c30baaa21041ddd99c9d1d0c"
+      "bytes": 1635,
+      "sha256": "9a96b5ef9f5fadb5ff6a76f5b138ae29754080e400b0d5566194d52ccceed768"
     },
     {
       "path": "examples/LoadResizeSave.dpr",
@@ -357,13 +357,13 @@
     },
     {
       "path": "examples/LoadResizeSave.dproj",
-      "bytes": 2735,
-      "sha256": "861082f71f1aea67ef562456cf6083f8590dfce4ac88797c33211cc7ea96c894"
+      "bytes": 3032,
+      "sha256": "9fbe2fdfcc95a1ef2b780d33e4e30d9bc581d9df3ab456d33bf2524845b48b5c"
     },
     {
       "path": "examples/LoadResizeSave.lpi",
-      "bytes": 1470,
-      "sha256": "8f57a0ee1d1a485622ea6584cefc1a5fc28206e00d50f12ba2682c514efe1215"
+      "bytes": 1767,
+      "sha256": "ec8a9dbe1caae92cc563b99469c3267e9aa6a203761f13e9f6956d1bc8b63daf"
     },
     {
       "path": "examples/Prepare-CrossCVHello.cmd",
@@ -752,5 +752,5 @@
     }
   ],
   "documentation_revision": "maintenance-20261110",
-  "source_revision": "source-update-20261117"
+  "source_revision": "early-access-023"
 }
