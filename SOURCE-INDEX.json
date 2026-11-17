@@ -607,8 +607,8 @@
     },
     {
       "path": "pascal/CrossVision.Mat.pas",
-      "bytes": 45311,
-      "sha256": "20c82770787f134dcde898efd834cd7337fe3b0c547deed6eccf521f00bdcb09"
+      "bytes": 45309,
+      "sha256": "0117468e2e8d03e37b695f745a2c3620ff0afdc7a6152a1d4fc307a43551a3ea"
     },
     {
       "path": "pascal/OpenCV.Aruco.pas",
@@ -752,5 +752,5 @@
     }
   ],
   "documentation_revision": "maintenance-20261110",
-  "source_revision": "controls-format-20261110"
+  "source_revision": "source-update-20261117"
 }

@@ -311,7 +311,7 @@ begin
       if not CV.Core.DeleteMat(@FHandle) then
         CVLifecycleFault(CVFaultDestroyFailed)
       else if Assigned(FHandle) then
-          CVLifecycleFault(CVFaultDestroyFailed);
+        CVLifecycleFault(CVFaultDestroyFailed);
   finally
     if FCounted then
     begin
