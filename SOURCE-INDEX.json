@@ -62,13 +62,13 @@
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 1256,
-      "sha256": "e727f440c1d3d305843fda32854822967ff611978aa68428f13933fd89af2bd8"
+      "bytes": 1264,
+      "sha256": "45882846e95c78c87ada35c48c379ddbc28fc64501a37d964920dd76e36de3fc"
     },
     {
       "path": "README.md",
-      "bytes": 2886,
-      "sha256": "20978970e80bb670f7399d31342ce07188161a4269ccab1df662e1ceb97d6765"
+      "bytes": 2902,
+      "sha256": "8042743e6a78035e9480c455f447acb53aa40a80922a945047b4bac3b975026d"
     },
     {
       "path": "TESTING.md",
