@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-023",
+  "release_id": "early-access-024",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -39,46 +39,6 @@
       "path": "COMPATIBILITY.tsv",
       "bytes": 512,
       "sha256": "5b71240ee78b4e2d337be9239b37f5104b261c768b4eca53926602ccb8a274a7"
-    },
-    {
-      "path": "INSTALL.md",
-      "bytes": 1059,
-      "sha256": "ce0a0ee893a1ab5bbbb82662f178dd17a6b5199f01b4c012aeb8b8eea23a650c"
-    },
-    {
-      "path": "KNOWN-ISSUES.md",
-      "bytes": 1583,
-      "sha256": "e1a4def7662b71556c50bf7cd9ee9f2773ef9da8d00154c89693d4697c699cd0"
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 1070,
-      "sha256": "04b643fe3d2d95be3b9a0ad9d3882d00a9b2d9dfb74694f35fe8edfc77e67815"
-    },
-    {
-      "path": "LICENSES.tsv",
-      "bytes": 5883,
-      "sha256": "797620867f3d81316c01d06e39c20eadef6cbd6c15c0d30a1f8cdeed82bd0a61"
-    },
-    {
-      "path": "PREPARE-EXAMPLES.md",
-      "bytes": 1264,
-      "sha256": "45882846e95c78c87ada35c48c379ddbc28fc64501a37d964920dd76e36de3fc"
-    },
-    {
-      "path": "README.md",
-      "bytes": 2902,
-      "sha256": "8042743e6a78035e9480c455f447acb53aa40a80922a945047b4bac3b975026d"
-    },
-    {
-      "path": "TESTING.md",
-      "bytes": 643,
-      "sha256": "32d75e3052ca3b58a012d8819ac5f2f6485af1f071c66557fbde5741d3df174b"
-    },
-    {
-      "path": "THIRD-PARTY-NOTICES.md",
-      "bytes": 3290,
-      "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     },
     {
       "path": "cpp/crosscv.def",
@@ -381,6 +341,26 @@
       "sha256": "0508f6cd909ffa3de889369fa48c6f4d2ad64a18a7d97936e93352408b632622"
     },
     {
+      "path": "INSTALL.md",
+      "bytes": 1059,
+      "sha256": "ce0a0ee893a1ab5bbbb82662f178dd17a6b5199f01b4c012aeb8b8eea23a650c"
+    },
+    {
+      "path": "KNOWN-ISSUES.md",
+      "bytes": 1583,
+      "sha256": "e1a4def7662b71556c50bf7cd9ee9f2773ef9da8d00154c89693d4697c699cd0"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1070,
+      "sha256": "04b643fe3d2d95be3b9a0ad9d3882d00a9b2d9dfb74694f35fe8edfc77e67815"
+    },
+    {
+      "path": "LICENSES.tsv",
+      "bytes": 5883,
+      "sha256": "797620867f3d81316c01d06e39c20eadef6cbd6c15c0d30a1f8cdeed82bd0a61"
+    },
+    {
       "path": "licenses/dav1d/COPYING",
       "bytes": 1317,
       "sha256": "b327887de263238deaa80c34cdd2ff3e0ba1d35db585ce14a37ce3e74ee389e9"
@@ -446,14 +426,14 @@
       "sha256": "d91b925f4e9000a4ae1f7218fa6b3b29a411126ae93959736a72cee43027ad2c"
     },
     {
-      "path": "licenses/opencv/3rdparty/libjasper/LICENSE",
-      "bytes": 2744,
-      "sha256": "edf9f4257cc33a1f396f9b062ca4a01dca7c79747c7d85b8947e603e5166760e"
-    },
-    {
       "path": "licenses/opencv/3rdparty/libjasper/copyright",
       "bytes": 3042,
       "sha256": "86c11bd7b94d24d6c372bd95f8d8998b8a69c7d82a91dd0247878b28223feabe"
+    },
+    {
+      "path": "licenses/opencv/3rdparty/libjasper/LICENSE",
+      "bytes": 2744,
+      "sha256": "edf9f4257cc33a1f396f9b062ca4a01dca7c79747c7d85b8947e603e5166760e"
     },
     {
       "path": "licenses/opencv/3rdparty/libjpeg-turbo/LICENSE.md",
@@ -516,11 +496,6 @@
       "sha256": "bba849c98da85a2b27b86113284a90812c959b1c1fc4ed67de9355475d1e6831"
     },
     {
-      "path": "licenses/opencv/LICENSE",
-      "bytes": 11358,
-      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
-    },
-    {
       "path": "licenses/opencv/doc/LICENSE_BSD.txt",
       "bytes": 2294,
       "sha256": "a5a7cf90fe5ac9763baad852cf69cf9d9b89bff934a679fdc5c8fcecaeba9a25"
@@ -529,6 +504,11 @@
       "path": "licenses/opencv/doc/LICENSE_CHANGE_NOTICE.txt",
       "bytes": 2768,
       "sha256": "b2255f81ae7162e36550daefe432c72a8506cfc1b954897dbc553ed5160ad4b8"
+    },
+    {
+      "path": "licenses/opencv/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
     },
     {
       "path": "licenses/opencv/modules/core/3rdparty/softfloat/COPYING.txt",
@@ -681,6 +661,11 @@
       "sha256": "c669f7c4b4ee19f5c8de44303a88918565eb2dec41dd6597fa0653e87731cb23"
     },
     {
+      "path": "pascal/OpenCV.pas",
+      "bytes": 15036,
+      "sha256": "d531bc8968300fea31d329e5787fa6e4336b875f5ea01a26f83c328b57390389"
+    },
+    {
       "path": "pascal/OpenCV.Photo.pas",
       "bytes": 20660,
       "sha256": "4af455614ce0d20d0cf9133026c87550e1919dd5c2f2b12aacebde78accd3d5f"
@@ -721,11 +706,6 @@
       "sha256": "e2c1ed77f0e928708048d4ef12d2e81b98a68491e1b4303b7bcb770515a761c9"
     },
     {
-      "path": "pascal/OpenCV.pas",
-      "bytes": 15036,
-      "sha256": "d531bc8968300fea31d329e5787fa6e4336b875f5ea01a26f83c328b57390389"
-    },
-    {
       "path": "pascal/OpenCVConsts.pas",
       "bytes": 29585,
       "sha256": "532030f9a3f79d88d7bc473b05872b1773fa79d93050777ab36fdc92553ab318"
@@ -734,6 +714,11 @@
       "path": "pascal/OpenCVTypes.pas",
       "bytes": 17295,
       "sha256": "ba328260b7d80a62e6d6659eb1b11802135305097613b911d4dc7d4f11e13153"
+    },
+    {
+      "path": "PREPARE-EXAMPLES.md",
+      "bytes": 1245,
+      "sha256": "58170e858ea4b72399cb701bc72086fd9d2b76214ed90fe25e82174d9e9b4be3"
     },
     {
       "path": "prepare/bootstrap.ps1",
@@ -746,11 +731,26 @@
       "sha256": "79504cb6d4c8b5e0f729ff422ac5ce9bab5c487d97b9ae728d96d965dbdd86ab"
     },
     {
+      "path": "README.md",
+      "bytes": 2902,
+      "sha256": "d8eddb8af822693160dc012ea76fe334b0e87aa625f3df8699d0bc2f516985e2"
+    },
+    {
       "path": "scripts/verify_source.py",
       "bytes": 13549,
       "sha256": "e36b010d92dd4a3b209c0e9fffb8492f492278c9bb65827a7b0dcee8a3fbd4a0"
+    },
+    {
+      "path": "TESTING.md",
+      "bytes": 643,
+      "sha256": "32d75e3052ca3b58a012d8819ac5f2f6485af1f071c66557fbde5741d3df174b"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 3290,
+      "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     }
   ],
-  "documentation_revision": "maintenance-20261110",
-  "source_revision": "early-access-023"
+  "documentation_revision": "ea024-20261125",
+  "source_revision": "early-access-024"
 }
