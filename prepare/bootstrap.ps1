@@ -5,7 +5,8 @@ param(
     [string]$InstallRoot = '',
     [string]$Cache = '',
     [ValidateSet('Auto', 'CPU', 'CUDA')][string]$Device = 'Auto',
-    [switch]$All
+    [switch]$All,
+    [string]$BootstrapConfig = (Join-Path $PSScriptRoot 'prepare-bootstrap.json')
 )
 
 $ErrorActionPreference = 'Stop'
@@ -364,18 +365,98 @@ function Test-LocalBuildOutput($Package, [string]$Member) {
         ($Member -cmatch ($example + 'lazarus-win64/units/[^/]+\.(a|o|ppu|or)$'))
 }
 
+function Assert-PreparePackage($Package, $Assets) {
+    if ([string]$Package.format -cnotin '', 'file', 'files') {
+        throw "Unsupported preparation package format: $($Package.format)"
+    }
+    if (-not ($Package.assets -is [array])) { throw 'Package assets must be an array.' }
+    $keys = [Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
+    foreach ($name in $Package.assets) {
+        if (-not ($name -is [string]) -or -not $keys.Add($name) -or
+            -not $Assets.PSObject.Properties[$name]) {
+            throw 'A package contains a missing or repeated asset.'
+        }
+    }
+    if ($keys.Count -eq 0) { throw "The package has no assets: $($Package.id)" }
+    if ($Package.format -ceq 'file' -and $keys.Count -ne 1) {
+        throw 'A file package must contain exactly one asset.'
+    }
+    if ($Package.format -cne 'files') { return }
+    if ($Package.archive_root -or -not $Package.members -or
+        @($Package.members.PSObject.Properties).Count -ne $keys.Count) {
+        throw 'A files package requires one member per asset and no archive root.'
+    }
+    $members = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
+    foreach ($entry in $Package.members.PSObject.Properties) {
+        if (-not $keys.Contains($entry.Name) -or -not ($entry.Value -is [string])) {
+            throw 'The package member map differs from its assets.'
+        }
+        $member = [string]$entry.Value
+        if ($member -match '(^/|/$|//)') { throw "Invalid package member path: $member" }
+        [void](Get-PreparePath $InstallRoot $member)
+        if ($member.Contains('\') -or -not $members.Add($member)) {
+            throw 'Package members must use distinct forward-slash paths.'
+        }
+        foreach ($part in $member.Split('/')) {
+            if ($part -match '[. ]$' -or
+                $part -match '^(?i:CON|PRN|AUX|NUL|CONIN\$|CONOUT\$|COM[1-9\u00b9\u00b2\u00b3]|LPT[1-9\u00b9\u00b2\u00b3])(?:\.|$)') {
+                throw "Invalid Windows package member: $member"
+            }
+        }
+    }
+    foreach ($member in $members) {
+        $parts = $member.Split('/')
+        for ($i = 1; $i -lt $parts.Length; $i++) {
+            if ($members.Contains(($parts[0..($i - 1)] -join '/'))) {
+                throw 'A package member is also used as a directory.'
+            }
+        }
+    }
+}
+
+function Assert-PreparePackages($Document) {
+    $names = @{}
+    foreach ($entry in $Document.assets.PSObject.Properties) {
+        $asset = $entry.Value
+        if ($asset.name -notmatch '^[\w.-]+$' -or $asset.sha256 -cnotmatch '^[0-9a-f]{64}$' -or
+            [long]$asset.bytes -le 0) { throw 'Invalid preparation asset metadata.' }
+        $identity = "$($asset.sha256):$($asset.bytes)"
+        if ($names.ContainsKey($asset.name) -and $names[$asset.name] -cne $identity) {
+            throw "Different assets share a cache filename: $($asset.name)"
+        }
+        $names[$asset.name] = $identity
+    }
+    foreach ($entry in $Document.packages.PSObject.Properties) {
+        Assert-PreparePackage $entry.Value $Document.assets
+    }
+}
+
 function Get-Package($Package, $Assets, [string]$SevenZip) {
+    Assert-PreparePackage $Package $Assets
     $destination = Get-PreparePath $InstallRoot $Package.directory
-    if ($verifiedPackages.ContainsKey($destination)) { return $destination }
     if ($Package.id -notmatch '^[\w.-]+$') { throw 'Invalid preparation package identifier.' }
     $receiptFile = Get-PreparePath $InstallRoot ".receipts/$($Package.id).json"
     $identity = [ordered]@{}
     foreach ($name in $Package.assets) {
         $identity[$name] = $Assets.PSObject.Properties[$name].Value.sha256
+        if ($Package.format -ceq 'files') {
+            $identity[$name] += '>' + $Package.members.PSObject.Properties[$name].Value
+        }
+    }
+    if ($verifiedPackages.ContainsKey($destination)) {
+        if (-not (Test-PackageIdentity $verifiedPackages[$destination] $identity)) {
+            throw 'Different preparation packages share an installation directory.'
+        }
+        return $destination
     }
     if (Test-Path -LiteralPath $receiptFile -PathType Leaf) {
         $receipt = Get-Content -LiteralPath $receiptFile -Raw -Encoding UTF8 | ConvertFrom-Json
         if (Test-PackageIdentity $receipt.assets $identity) {
+            foreach ($name in $Package.required) {
+                if (-not $receipt.files.PSObject.Properties[$name]) {
+                    throw "An installed package is missing a required member: $name"
+                }
+            }
             Write-Host "Checking installed package: $($Package.title)"
             foreach ($pin in $receipt.files.PSObject.Properties) {
                 $file = Get-PreparePath $destination $pin.Name
@@ -390,7 +471,7 @@ function Get-Package($Package, $Assets, [string]$SevenZip) {
                 }
                 throw "A prepared file differs from the installed package: $file. Preserve your work and choose a new installation folder."
             }
-            $verifiedPackages[$destination] = $true
+            $verifiedPackages[$destination] = [pscustomobject]$identity
             return $destination
         }
     }
@@ -414,10 +495,20 @@ function Get-Package($Package, $Assets, [string]$SevenZip) {
     Write-PrepareJson $marker $identity
     [void][IO.Directory]::CreateDirectory($workspace)
     Write-Host "Extracting $($Package.title)..."
-    if ($Package.format -eq 'file') {
+    if ($Package.format -ceq 'files') {
+        for ($i = 0; $i -lt $paths.Count; $i++) {
+            $member = $Package.members.PSObject.Properties[$Package.assets[$i]].Value
+            $target = Get-PreparePath $workspace $member
+            [void][IO.Directory]::CreateDirectory((Split-Path -Parent $target))
+            Copy-Item -LiteralPath $paths[$i] -Destination $target
+        }
+    } elseif ($Package.format -eq 'file') {
         Copy-Item -LiteralPath $paths[0] -Destination (Get-PreparePath $workspace (Split-Path -Leaf $paths[0]))
     } elseif ([IO.Path]::GetExtension($paths[0]) -ieq '.zip') {
-        Expand-PrepareZip $paths[0] $workspace
+        foreach ($archive in $paths) {
+            if ([IO.Path]::GetExtension($archive) -ine '.zip') { throw 'A ZIP package can contain only ZIP archives.' }
+            Expand-PrepareZip $archive $workspace
+        }
     } else {
         Expand-PrepareSevenZip $SevenZip $paths[0] $workspace
     }
@@ -429,6 +520,17 @@ function Get-Package($Package, $Assets, [string]$SevenZip) {
         if ($file.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Archive links are not supported.' }
         $relative = $file.FullName.Substring($source.Length + 1).Replace('\', '/')
         $pins[$relative] = @{bytes = $file.Length; sha256 = Get-PrepareHash $file.FullName}
+    }
+    if ($Package.format -ceq 'files') {
+        if ($pins.Count -ne $identity.Count) { throw 'The installed member set differs from the package.' }
+        foreach ($name in $Package.assets) {
+            $member = $Package.members.PSObject.Properties[$name].Value
+            $asset = $Assets.PSObject.Properties[$name].Value
+            if (-not $pins.Contains($member) -or $pins[$member].bytes -ne [long]$asset.bytes -or
+                $pins[$member].sha256 -cne $asset.sha256) {
+                throw "An installed member differs from its asset: $member"
+            }
+        }
     }
     foreach ($name in $Package.required) {
         if (-not $pins.Contains($name)) { throw "A required package file is missing: $name" }
@@ -448,7 +550,7 @@ function Get-Package($Package, $Assets, [string]$SevenZip) {
         [IO.Directory]::Delete($workspace)
     }
     Remove-Item -LiteralPath $marker
-    $verifiedPackages[$destination] = $true
+    $verifiedPackages[$destination] = [pscustomobject]$identity
     $destination
 }
 
@@ -534,12 +636,28 @@ namespace CrossPascal {
     }
 }
 
-function Select-ExampleDevice($Row, $Document, $CudaDevice) {
+function Select-ExampleDevice($Row, $Document, $CudaDevice, [switch]$SkipUnavailable) {
     $plan = @{row = $Row; packages = [ordered]@{}; device = ''; arch = ''; message = ''}
     foreach ($key in $Row.packages) { $plan.packages[$key] = $key }
-    if (-not $Row.cuda) { return $plan }
+    $cpuSupported = $true
+    if ($Row.PSObject.Properties['cpu_supported']) {
+        if ($Row.cpu_supported -isnot [bool]) { throw 'cpu_supported must be a JSON boolean.' }
+        $cpuSupported = $Row.cpu_supported
+    }
+    if (-not $Row.cuda) {
+        if (-not $cpuSupported) { throw 'A CUDA-only profile needs CUDA preparation settings.' }
+        return $plan
+    }
     $plan.device = 'CPU'
     if ($Device -eq 'CPU') {
+        if (-not $cpuSupported) {
+            if ($SkipUnavailable) {
+                $plan.skipped = $true
+                $plan.message = "Skipped $($Row.title): no CPU model bundle."
+                return $plan
+            }
+            throw "$($Row.title) has no CPU model bundle."
+        }
         $plan.message = 'Selected the CPU bundle.'
         return $plan
     }
@@ -556,7 +674,15 @@ function Select-ExampleDevice($Row, $Document, $CudaDevice) {
         }
     }
     if ($reason) {
-        if ($Device -eq 'CUDA') { throw "Cannot prepare $($Row.title) for CUDA. $reason" }
+        if (-not $cpuSupported) {
+            $reason = "No CPU bundle is available for this profile. $reason"
+            if ($SkipUnavailable) {
+                $plan.skipped = $true
+                $plan.message = "Skipped $($Row.title): $reason"
+                return $plan
+            }
+        }
+        if ($Device -eq 'CUDA' -or -not $cpuSupported) { throw "Cannot prepare $($Row.title) for CUDA. $reason" }
         $plan.message = "Selected the CPU bundle. $reason"
         return $plan
     }
@@ -564,7 +690,14 @@ function Select-ExampleDevice($Row, $Document, $CudaDevice) {
     if (-not $plan.packages.Contains($key) -or -not $Document.packages.PSObject.Properties[$variant.Value]) {
         throw 'The CUDA package does not match the preparation manifest.'
     }
-    $plan.packages[$key] = [string]$variant.Value
+    if ($Row.cuda.PSObject.Properties['keep_cpu']) {
+        if ($Row.cuda.keep_cpu -isnot [bool]) { throw 'keep_cpu must be a JSON boolean.' }
+    }
+    if ($Row.cuda.keep_cpu -eq $true) {
+        $plan.packages[[string]$variant.Value] = [string]$variant.Value
+    } else {
+        $plan.packages[$key] = [string]$variant.Value
+    }
     $plan.device = 'CUDA'
     $plan.arch = $CudaDevice.arch
     $plan.message = "Selected the $($plan.arch) CUDA bundle. Free GPU memory: $($CudaDevice.free_mib) MiB."
@@ -676,7 +809,7 @@ function Install-Example($Plan, $Document) {
 }
 
 try {
-    $bootstrap = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'prepare-bootstrap.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $bootstrap = Get-Content -LiteralPath $BootstrapConfig -Raw -Encoding UTF8 | ConvertFrom-Json
     if (-not $Release) { $Release = $bootstrap.release }
     if ($bootstrap.local_preview -and -not $PSBoundParameters.ContainsKey('Manifest') -and
         -not (Test-Path -LiteralPath $Manifest -PathType Leaf)) {
@@ -697,7 +830,9 @@ try {
     if (Test-Path -LiteralPath $Manifest -PathType Leaf) {
         $document = Get-Content -LiteralPath $Manifest -Raw -Encoding UTF8 | ConvertFrom-Json
     } else {
-        $asset = Find-ReleaseAsset 'pisarev/crosspascal' $Release 'PREPARE-MANIFEST.json'
+        $manifestName = 'PREPARE-MANIFEST.json'
+        if ($bootstrap.manifest_asset) { $manifestName = [string]$bootstrap.manifest_asset }
+        $asset = Find-ReleaseAsset 'pisarev/crosspascal' $Release $manifestName
         if ($asset.size -gt 2097152) { throw 'The release preparation manifest is too large.' }
         $address = $asset.url
         $accept = 'application/octet-stream'
@@ -720,6 +855,7 @@ try {
     $InstallRoot = [IO.Path]::GetFullPath($InstallRoot)
     if (-not $Cache) { $Cache = Join-Path (Split-Path -Parent $InstallRoot) 'downloads' }
     $Cache = [IO.Path]::GetFullPath($Cache)
+    Assert-PreparePackages $document
     [void][IO.Directory]::CreateDirectory($InstallRoot)
     [void][IO.Directory]::CreateDirectory($Cache)
     if ($All) { $selected = @($document.examples) }
@@ -741,7 +877,12 @@ try {
     if ($Device -ne 'CPU' -and ($selected | Where-Object cuda)) {
         $cudaDevice = Get-PrepareCudaDevice
     }
-    $plans = @($selected | ForEach-Object { Select-ExampleDevice $_ $document $cudaDevice })
+    $plans = @($selected | ForEach-Object {
+        $plan = Select-ExampleDevice $_ $document $cudaDevice -SkipUnavailable:$All
+        if ($plan.skipped) { Write-Host $plan.message }
+        else { $plan }
+    })
+    if (-not $plans) { throw 'No selected example is available for this device.' }
     foreach ($plan in $plans) {
         foreach ($key in $plan.packages.Values) {
             $package = $document.packages.PSObject.Properties[$key].Value

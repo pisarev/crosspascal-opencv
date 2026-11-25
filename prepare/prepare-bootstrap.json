@@ -1,4 +1,5 @@
 {
-  "release": "early-access-019",
-  "install_directory": "early-access-019"
+  "release": "early-access-024-r1",
+  "install_directory": "early-access-024-r1",
+  "manifest_asset": "PREPARE-MANIFEST-ea024-r1.json"
 }
