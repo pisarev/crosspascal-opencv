@@ -10,7 +10,11 @@ unit OpenCV;
 
 {$B-}
 {$IFDEF FPC}
+{$IFDEF MSWINDOWS}
+  {$MODE DELPHIUNICODE}
+{$ELSE}
   {$MODE DELPHI}
+{$ENDIF}
 {$ENDIF}
 
 interface
@@ -24,11 +28,11 @@ uses
   {$ELSE}
   WinApi.Windows,
   {$ENDIF}
-  SysUtils, OpenCVTypes, OpenCV.Core, OpenCV.ImgProc, OpenCV.ImgCodecs,
-  OpenCV.Photo, OpenCV.Video, OpenCV.VideoIO, OpenCV.ObjDetect, OpenCV.Dnn, OpenCV.Ml,
-  OpenCV.Tracking, OpenCV.Features2D, OpenCV.Calib3D, OpenCV.HighGui, OpenCV.XImgProc,
-  OpenCV.Bioinspired, OpenCV.Custom, OpenCV.Stitching, OpenCV.Aruco, OpenCV.XFeatures2D,
-  OpenCV.Optflow, OpenCV.Face, OpenCV.XPhoto;
+  SysUtils, OpenCVTypes, OpenCV.Core, OpenCV.ImgProc, OpenCV.ImgCodecs, OpenCV.Photo,
+  OpenCV.Video, OpenCV.VideoIO, OpenCV.ObjDetect, OpenCV.Dnn, OpenCV.Ml, OpenCV.Tracking,
+  OpenCV.Features2D, OpenCV.Calib3D, OpenCV.HighGui, OpenCV.XImgProc, OpenCV.Bioinspired,
+  OpenCV.Custom, OpenCV.Stitching, OpenCV.Aruco, OpenCV.XFeatures2D, OpenCV.Optflow,
+  OpenCV.Face, OpenCV.XPhoto;
 
 type
   TCV = record
@@ -186,7 +190,7 @@ begin
   begin
     SetLength(Buffer, Capacity);
     SetLastError(0);
-    Copied := GetModuleFileName(HMODULE(Handle), PChar(Buffer), Capacity);
+    Copied := GetModuleFileNameW(HMODULE(Handle), PWideChar(Buffer), Capacity);
     if Copied = 0 then
     begin
       Failure := 'the module path could not be read (error ' + IntToStr(GetLastError) + ')';
@@ -209,11 +213,29 @@ begin
   end;
 end;
 
+{$IFDEF FPC}
+function CompareStringOrdinal(A: PWideChar; LengthA: Integer; B: PWideChar;
+  LengthB, IgnoreCase: Integer): Integer; stdcall; external 'kernel32.dll';
+{$ENDIF}
+
 function SamePathText(const A, B: string): Boolean;
+{$IFDEF FPC}
+const
+  OrdinalEqual = 2;
+var
+  PathA, PathB: string;
+begin
+  PathA := ExcludeTrailingPathDelimiter(ExpandFileName(A));
+  PathB := ExcludeTrailingPathDelimiter(ExpandFileName(B));
+  Result := CompareStringOrdinal(PWideChar(PathA), Length(PathA),
+    PWideChar(PathB), Length(PathB), 1) = OrdinalEqual;
+end;
+{$ELSE}
 begin
   Result := SameText(ExcludeTrailingPathDelimiter(ExpandFileName(A)),
     ExcludeTrailingPathDelimiter(ExpandFileName(B)));
 end;
+{$ENDIF}
 
 const
   GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS = $00000004;
@@ -355,13 +377,17 @@ begin
       'CVFinalize first, once nothing of it is alive. Requested: ' + LibraryPath;
     Exit(False);
   end;
+  {$IFDEF MSWINDOWS}
+  Handle := TLibHandle(LoadLibraryW(PWideChar(LibraryPath)));
+  {$ELSE}
   Handle := LoadLibrary(PChar(LibraryPath));
+  {$ENDIF}
   if Handle = {$IFDEF FPC}DynLibs.NilHandle{$ELSE}0{$ENDIF} then
   begin
-    {$IFDEF FPC}
-    Complaint := GetLoadErrorStr;
-    {$ELSE}
+    {$IFDEF MSWINDOWS}
     Complaint := SysErrorMessage(GetLastError);
+    {$ELSE}
+    Complaint := GetLoadErrorStr;
     {$ENDIF}
     CV.Module.Error := 'Failed to load library: ' + LibraryPath;
     if Complaint <> '' then
@@ -411,8 +437,8 @@ begin
   begin
     FreeLibrary(Handle);
     CV.Module.Error := Format('Contract version mismatch: the library reports %d, ' +
-      'this binding is written against %d: %s',
-      [LibraryAbiVersion, CVSupportedAbiVersion, LibraryPath]);
+      'this binding is written against %d: ',
+      [LibraryAbiVersion, CVSupportedAbiVersion]) + LibraryPath;
     LibraryAbiVersion := 0;
     CV.Module.Loaded := False;
     Exit(False);
@@ -443,8 +469,8 @@ begin
   if CVBindMissingCount > 0 then
   begin
     Complaint := Format('The library reports contract version %d but does not ' +
-      'export %d of the functions this binding needs (%s): %s',
-      [LibraryAbiVersion, CVBindMissingCount, CVBindMissingNames(5), LibraryPath]);
+      'export %d of the functions this binding needs (%s): ',
+      [LibraryAbiVersion, CVBindMissingCount, CVBindMissingNames(5)]) + LibraryPath;
     UnloadCandidate(Handle);
     CV.Module.Error := Complaint;
     Exit(False);

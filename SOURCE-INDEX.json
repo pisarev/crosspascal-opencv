@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-024",
+  "release_id": "early-access-024-r1",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -356,11 +356,6 @@
       "sha256": "04b643fe3d2d95be3b9a0ad9d3882d00a9b2d9dfb74694f35fe8edfc77e67815"
     },
     {
-      "path": "LICENSES.tsv",
-      "bytes": 5883,
-      "sha256": "797620867f3d81316c01d06e39c20eadef6cbd6c15c0d30a1f8cdeed82bd0a61"
-    },
-    {
       "path": "licenses/dav1d/COPYING",
       "bytes": 1317,
       "sha256": "b327887de263238deaa80c34cdd2ff3e0ba1d35db585ce14a37ce3e74ee389e9"
@@ -481,14 +476,14 @@
       "sha256": "f64a0d2030dd3bb501f303eb66097ed92cd0c63f824e515b1116dafbce5346fe"
     },
     {
-      "path": "licenses/opencv/3rdparty/zlib-ng/LICENSE.md",
-      "bytes": 867,
-      "sha256": "d3c80be055d94d798eaa786116e84fa0b010bc11420b5d2060d978ea77845436"
-    },
-    {
       "path": "licenses/opencv/3rdparty/zlib/LICENSE",
       "bytes": 1002,
       "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
+    },
+    {
+      "path": "licenses/opencv/3rdparty/zlib-ng/LICENSE.md",
+      "bytes": 867,
+      "sha256": "d3c80be055d94d798eaa786116e84fa0b010bc11420b5d2060d978ea77845436"
     },
     {
       "path": "licenses/opencv/COPYRIGHT",
@@ -569,6 +564,11 @@
       "path": "licenses/opencv_contrib/modules/wechat_qrcode/LICENSE",
       "bytes": 20273,
       "sha256": "f8549a71cfb8bfa34e6b7d6491fbfac8034673294e2fd80493389e460a496cb5"
+    },
+    {
+      "path": "LICENSES.tsv",
+      "bytes": 5883,
+      "sha256": "797620867f3d81316c01d06e39c20eadef6cbd6c15c0d30a1f8cdeed82bd0a61"
     },
     {
       "path": "mingw-toolchain.cmake",
@@ -662,8 +662,8 @@
     },
     {
       "path": "pascal/OpenCV.pas",
-      "bytes": 15036,
-      "sha256": "d531bc8968300fea31d329e5787fa6e4336b875f5ea01a26f83c328b57390389"
+      "bytes": 15721,
+      "sha256": "a851a5f4caa2507e31bdb460320fa18620ec86476fed6756c06a68710a673cc7"
     },
     {
       "path": "pascal/OpenCV.Photo.pas",
@@ -716,11 +716,6 @@
       "sha256": "ba328260b7d80a62e6d6659eb1b11802135305097613b911d4dc7d4f11e13153"
     },
     {
-      "path": "PREPARE-EXAMPLES.md",
-      "bytes": 1245,
-      "sha256": "58170e858ea4b72399cb701bc72086fd9d2b76214ed90fe25e82174d9e9b4be3"
-    },
-    {
       "path": "prepare/bootstrap.ps1",
       "bytes": 38442,
       "sha256": "48dde4cd8be8a72d06cac395b5a333b43e4f4e1e6c0c0ba00a62cabb98c7cf27"
@@ -731,9 +726,14 @@
       "sha256": "79504cb6d4c8b5e0f729ff422ac5ce9bab5c487d97b9ae728d96d965dbdd86ab"
     },
     {
+      "path": "PREPARE-EXAMPLES.md",
+      "bytes": 1251,
+      "sha256": "35204d7d312f9e2c82a10148bb9ce44359c7a3d508eaab1a14274c54a3ef4683"
+    },
+    {
       "path": "README.md",
-      "bytes": 2902,
-      "sha256": "d8eddb8af822693160dc012ea76fe334b0e87aa625f3df8699d0bc2f516985e2"
+      "bytes": 2914,
+      "sha256": "d53ecb6a0d341cf23796e576de482bd69790a295bde2652d5b420e26d305ea4b"
     },
     {
       "path": "scripts/verify_source.py",
@@ -751,6 +751,6 @@
       "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     }
   ],
-  "documentation_revision": "ea024-20261125",
-  "source_revision": "early-access-024"
+  "documentation_revision": "ea024-r1-20261125",
+  "source_revision": "early-access-024-r1"
 }
