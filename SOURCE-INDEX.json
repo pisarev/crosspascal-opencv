@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-024-r1",
+  "release_id": "early-access-025",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -356,6 +356,11 @@
       "sha256": "04b643fe3d2d95be3b9a0ad9d3882d00a9b2d9dfb74694f35fe8edfc77e67815"
     },
     {
+      "path": "LICENSES.tsv",
+      "bytes": 5883,
+      "sha256": "797620867f3d81316c01d06e39c20eadef6cbd6c15c0d30a1f8cdeed82bd0a61"
+    },
+    {
       "path": "licenses/dav1d/COPYING",
       "bytes": 1317,
       "sha256": "b327887de263238deaa80c34cdd2ff3e0ba1d35db585ce14a37ce3e74ee389e9"
@@ -476,14 +481,14 @@
       "sha256": "f64a0d2030dd3bb501f303eb66097ed92cd0c63f824e515b1116dafbce5346fe"
     },
     {
-      "path": "licenses/opencv/3rdparty/zlib/LICENSE",
-      "bytes": 1002,
-      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
-    },
-    {
       "path": "licenses/opencv/3rdparty/zlib-ng/LICENSE.md",
       "bytes": 867,
       "sha256": "d3c80be055d94d798eaa786116e84fa0b010bc11420b5d2060d978ea77845436"
+    },
+    {
+      "path": "licenses/opencv/3rdparty/zlib/LICENSE",
+      "bytes": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243"
     },
     {
       "path": "licenses/opencv/COPYRIGHT",
@@ -564,11 +569,6 @@
       "path": "licenses/opencv_contrib/modules/wechat_qrcode/LICENSE",
       "bytes": 20273,
       "sha256": "f8549a71cfb8bfa34e6b7d6491fbfac8034673294e2fd80493389e460a496cb5"
-    },
-    {
-      "path": "LICENSES.tsv",
-      "bytes": 5883,
-      "sha256": "797620867f3d81316c01d06e39c20eadef6cbd6c15c0d30a1f8cdeed82bd0a61"
     },
     {
       "path": "mingw-toolchain.cmake",
@@ -716,24 +716,24 @@
       "sha256": "ba328260b7d80a62e6d6659eb1b11802135305097613b911d4dc7d4f11e13153"
     },
     {
+      "path": "PREPARE-EXAMPLES.md",
+      "bytes": 1248,
+      "sha256": "6c5934f95d7e080a236549ad55516c27791e91957de928e648ec4d523e265c98"
+    },
+    {
       "path": "prepare/bootstrap.ps1",
-      "bytes": 45056,
-      "sha256": "15d41f9b1445d00ab66785226245bc8b2e219a2ce2512c977e3d01ab947446e2"
+      "bytes": 46281,
+      "sha256": "d16e61dd0404b0eab8ebc51e400ac3c5d3305d2e7d0e4606544ccc03b939175a"
     },
     {
       "path": "prepare/prepare-bootstrap.json",
-      "bytes": 139,
-      "sha256": "ee28ecfee7ba3a213d889c72af61b487c371f4bbb246a5dfa76d1edc6dee6227"
-    },
-    {
-      "path": "PREPARE-EXAMPLES.md",
-      "bytes": 1257,
-      "sha256": "328b08f439c0c7db9f2a27af4b441bd04ef946a0cde38b8735717300073730f8"
+      "bytes": 130,
+      "sha256": "820640bf19258b64c6dbf2cf9c3fa7aac554920ba653a3917dcee811c56f2c01"
     },
     {
       "path": "README.md",
-      "bytes": 2920,
-      "sha256": "5046da96c579cfc2e6f309c1455c5dacc2ba3a007e6fb859b1e914f70cddab46"
+      "bytes": 2902,
+      "sha256": "721e4837f67cd27a92bc25afa0c99e1d027336ee9c21cd9f709abce26b92019f"
     },
     {
       "path": "scripts/verify_source.py",
@@ -751,6 +751,6 @@
       "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     }
   ],
-  "documentation_revision": "ea024-r1-20261125",
-  "source_revision": "early-access-024-r1"
+  "documentation_revision": "ea025-20261126",
+  "source_revision": "early-access-025"
 }
