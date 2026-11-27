@@ -723,7 +723,7 @@
     {
       "path": "PREPARE-EXAMPLES.md",
       "bytes": 1257,
-      "sha256": "b4b6d5f122cd90f5a22fb2147ac1610ad8169e6dce34feeac2ef6b1f71f27cf1"
+      "sha256": "fb17b69599f01f914bf84ba87e6b28359b9fd61d2e8a42d4c39d4e9d4168fbfa"
     },
     {
       "path": "prepare/bootstrap.ps1",

@@ -9,7 +9,7 @@ Wait for **READY**, then open the supplied `.dproj` in Delphi 13.2 or `.lpi`
 in Lazarus 4.8 / FPC 3.2.2. Select Windows 64-bit / Release, build, and run.
 The installed SDK includes ready Lazarus executables. Keep its folders together.
 
-The default installation is `%LOCALAPPDATA%/CrossPascal/early-access-024-r1`.
+The default installation is `%LOCALAPPDATA%/CrossPascal/early-access-025-r1`.
 Set `CROSSPASCAL_PREPARE_HOME` before starting Prepare to choose another drive.
 Repeating preparation reuses verified downloads and preserves local source edits.
 
