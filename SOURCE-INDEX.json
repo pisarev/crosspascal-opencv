@@ -1,6 +1,6 @@
 {
   "schema": "crosspascal-windows-source-index-v1",
-  "release_id": "early-access-025",
+  "release_id": "early-access-025-r1",
   "repository": "crosspascal-opencv",
   "local_metadata": [
     {
@@ -441,6 +441,11 @@
       "sha256": "e548c96c0c09397c94b5c5531836c02ff2c403f1f2b130cad8e3ec9439b5a7cc"
     },
     {
+      "path": "licenses/opencv/3rdparty/libjpeg-turbo/README.ijg",
+      "bytes": 12739,
+      "sha256": "5c1f9094835d21f66ee0e9ce81c57264d2dd50801b19832d6723dc8cdbda080e"
+    },
+    {
       "path": "licenses/opencv/3rdparty/libpng/LICENSE",
       "bytes": 5345,
       "sha256": "7317e078e2d3b5d7ba5a6159e650945153262b44b76f6700f8e9edb261c5143e"
@@ -727,8 +732,8 @@
     },
     {
       "path": "prepare/prepare-bootstrap.json",
-      "bytes": 130,
-      "sha256": "820640bf19258b64c6dbf2cf9c3fa7aac554920ba653a3917dcee811c56f2c01"
+      "bytes": 139,
+      "sha256": "a25c26c6315f8b08ebf3bd4afef632006592a5984ee4854ff23070cb92e96b40"
     },
     {
       "path": "README.md",
@@ -751,6 +756,6 @@
       "sha256": "5065ff8d5883c80aa06240b3771d133a952127fd6eff2ceed6f1f01a7262f819"
     }
   ],
-  "documentation_revision": "ea025-20261126",
-  "source_revision": "early-access-025"
+  "documentation_revision": "ea025-r1-20261127",
+  "source_revision": "early-access-025-r1"
 }
