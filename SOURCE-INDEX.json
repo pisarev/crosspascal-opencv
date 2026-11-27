@@ -722,8 +722,8 @@
     },
     {
       "path": "PREPARE-EXAMPLES.md",
-      "bytes": 1248,
-      "sha256": "6c5934f95d7e080a236549ad55516c27791e91957de928e648ec4d523e265c98"
+      "bytes": 1257,
+      "sha256": "b4b6d5f122cd90f5a22fb2147ac1610ad8169e6dce34feeac2ef6b1f71f27cf1"
     },
     {
       "path": "prepare/bootstrap.ps1",
@@ -737,8 +737,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2902,
-      "sha256": "721e4837f67cd27a92bc25afa0c99e1d027336ee9c21cd9f709abce26b92019f"
+      "bytes": 2920,
+      "sha256": "c937b7a5c8a702315525c9e6484197d60f6e92ec5c3ecfdb2ea5c8372e020055"
     },
     {
       "path": "scripts/verify_source.py",
